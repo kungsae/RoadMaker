@@ -59,7 +59,6 @@ public class GridBuildingSystem : MonoBehaviour
 		for (int i = 0; i < carObj.Count; i++)
 		{
 			var car = new CarPos(carObj[i].position, carObj[i].rotation.eulerAngles);
-			Debug.Log(car.GetPos());
 			carPosList.Add(car);
 
 		}

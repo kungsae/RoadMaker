@@ -182,12 +182,12 @@ public class GameManager : MonoBehaviour
         clearChcekText.color = Color.yellow;
         timeText[1].text = $"{min.ToString("00")}:{(sec % 60).ToString("00.00")}";
         button[button.Length - 1].SetActive(true);
-        for (int i = 0; i < 3; i++)
-        {
-            if (timeLimit[i] > sec)
-            {
-            }
-        }
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    if (timeLimit[i] > sec)
+        //    {
+        //    }
+        //}
         completed = false;
 
     }

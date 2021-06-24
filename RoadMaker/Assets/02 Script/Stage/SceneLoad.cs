@@ -11,6 +11,7 @@ public class SceneLoad : MonoBehaviour
 	StageManager stageManager;
 	public int maxOpenStage = 1;
 	[SerializeField] private List<Image> starsImage = new List<Image>();
+	public GameObject panel;
 	private void Start()
 	{
 		stageManager = FindObjectOfType<StageManager>();
@@ -27,11 +28,14 @@ public class SceneLoad : MonoBehaviour
 		{
 			lockImage[i].SetActive(false);
 		}
-		Debug.Log(maxOpenStage);
 	}
 	private void stageStart(int stageLevel)
 	{
 		if (maxOpenStage >= stageLevel)
 			SceneManager.LoadScene("Stage" + stageLevel);
+	}
+	public void onHelp(bool on)
+	{
+		panel.gameObject.SetActive(on);
 	}
 }
