@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
     }
     private void Clear()
     {
-        if (isClear)
+        if (isClear&&stageManager.LastClearStage < stageNum + 1)
         {
             stageManager.LastClearStage = stageNum + 1;
         }
@@ -182,14 +182,17 @@ public class GameManager : MonoBehaviour
         clearChcekText.color = Color.yellow;
         timeText[1].text = $"{min.ToString("00")}:{(sec % 60).ToString("00.00")}";
         button[button.Length - 1].SetActive(true);
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    if (timeLimit[i] > sec)
-        //    {
-        //    }
-        //}
+        int starCount = 0;
+		for (int i = 0; i < 3; i++)
+		{
+			if (timeLimit[i] > sec)
+			{
+                starCount++;
+            }
+		}
+        if (stageManager.stageDatas[stageNum - 1].stageStar < starCount)
+            stageManager.stageDatas[stageNum - 1].stageStar = starCount;
         completed = false;
-
     }
     private void Timer()
     {
@@ -210,7 +213,7 @@ public class GameManager : MonoBehaviour
     }
 	public void BackToStage()
     {
-        if (isClear)
+        if (isClear && stageManager.LastClearStage < stageNum + 1)
         {
             stageManager.LastClearStage = stageNum+1;
         }
@@ -218,7 +221,7 @@ public class GameManager : MonoBehaviour
     }
     public void NextStage()
     {
-        if (isClear)
+        if (isClear && stageManager.LastClearStage < stageNum + 1)
         {
             stageManager.LastClearStage = stageNum + 1;
         }

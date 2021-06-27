@@ -10,7 +10,7 @@ public class SceneLoad : MonoBehaviour
 	[SerializeField] List<GameObject> lockImage;
 	StageManager stageManager;
 	public int maxOpenStage = 1;
-	[SerializeField] private List<Image> starsImage = new List<Image>();
+	[SerializeField] private List<Star>stars = new List<Star>();
 	public GameObject panel;
 	private void Start()
 	{
@@ -18,16 +18,23 @@ public class SceneLoad : MonoBehaviour
 		if (maxOpenStage <= stageManager.LastClearStage)
 		{
 			maxOpenStage = stageManager.LastClearStage;
+			
 		}
 		for (int i = 0; i < stageButton.Count; i++)
 		{
 			int a = i;
 			stageButton[i].onClick.AddListener(() => { stageStart(a + 1); });
+			stars[i].Init(true);
+
 		}
 		for (int i = 0; i < maxOpenStage; i++)
 		{
-			lockImage[i].SetActive(false);
+			//lockImage[i].SetActive(false);
+			stars[i].Init(false,stageManager.stageDatas[i].stageStar);
 		}
+		
+
+
 	}
 	private void stageStart(int stageLevel)
 	{
