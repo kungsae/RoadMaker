@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,13 +10,21 @@ public class SceneLoad : MonoBehaviour
 	[SerializeField] List<Button> stageButton;
 	[SerializeField] List<GameObject> lockImage;
 	StageManager stageManager;
-	public int maxOpenStage = 1;
 	private int totalStar = 0;
+	private int maxOpenStage = 1;
 	[SerializeField] private List<Star>stars = new List<Star>();
+	private List<int> starCount = new List<int>();
 	public GameObject panel;
+
 	private void Start()
 	{
 		stageManager = FindObjectOfType<StageManager>();
+
+		for (int i = 0; i < stageManager.stageStar.stageStar.Count; i++)
+		{
+			starCount.Add(stageManager.stageStar.stageStar[i]);
+		}
+
 		if (maxOpenStage <= stageManager.LastClearStage)
 		{
 			maxOpenStage = stageManager.LastClearStage;
@@ -31,14 +40,13 @@ public class SceneLoad : MonoBehaviour
 		for (int i = 0; i < maxOpenStage; i++)
 		{
 			//lockImage[i].SetActive(false);
-			stars[i].Init(false,stageManager.stageDatas[i].stageStar);
-			totalStar += stageManager.stageDatas[i].stageStar;
+			stars[i].Init(false, starCount[i]);
+			totalStar += starCount[i];
 		}
-		Debug.Log(totalStar);
-
-
-
-
+	}
+	void OnApplicationQuit()
+	{
+		Save();
 	}
 	private void stageStart(int stageLevel)
 	{
@@ -49,4 +57,20 @@ public class SceneLoad : MonoBehaviour
 	{
 		panel.gameObject.SetActive(on);
 	}
+	public void Save()
+	{
+		string json = JsonUtility.ToJson(stageManager.stageStar);
+		Debug.Log(json);
+		File.WriteAllText(Application.persistentDataPath + "/data.json", json);
+	}
+	public void Load()
+	{
+		if (File.Exists(Application.persistentDataPath + "/data.json"))
+		{
+			string json = File.ReadAllText(Application.persistentDataPath + "/data.json");
+			StageDataList list = JsonUtility.FromJson<StageDataList>(json);
+			stageManager.stageStar.stageStar = list.stageStar;
+		}
+	}
+
 }

@@ -48,11 +48,21 @@ public class GameManager : MonoBehaviour
     StageManager stageManager;
     public bool isGameOver = false;
     [SerializeField] private float[] timeLimit;
+    [SerializeField] Image[] star;
+    [SerializeField] Sprite[] starImage;
+    [SerializeField] Text[] timeLimitText;
+
+
     void Start()
     {
         grid = FindObjectOfType<GridBuildingSystem>();
         stageManager = FindObjectOfType<StageManager>();
         Time.timeScale = 0;
+		for (int i = 0; i < 3; i++)
+		{
+            timeLimitText[i].text = $"{timeLimit[i].ToString("00.00")}";
+            star[i].sprite = starImage[0];
+        }
     }
 	private void Update()
 	{
@@ -101,7 +111,7 @@ public class GameManager : MonoBehaviour
         completed = true;
         isGameOver = false;
         sec = 0;
-		min = 0;
+		min = 0;    
 		clearUI.gameObject.SetActive(false);
 		timeText[0].gameObject.SetActive(true);
 		timeText[1].gameObject.SetActive(true);
@@ -123,7 +133,6 @@ public class GameManager : MonoBehaviour
 			{
 				Car _car = grid.startObj[i].GetComponent<Car>();
 				_car.nav.enabled = true;
-				_car.nav.ResetPath();
 			}
 		}
 		Time.timeScale = 0;
@@ -185,13 +194,14 @@ public class GameManager : MonoBehaviour
         int starCount = 0;
 		for (int i = 0; i < 3; i++)
 		{
-			if (timeLimit[i] > sec)
+            if (timeLimit[i] > sec)
 			{
                 starCount++;
+                star[i].sprite = starImage[1];
             }
 		}
-        if (stageManager.stageDatas[stageNum - 1].stageStar < starCount)
-            stageManager.stageDatas[stageNum - 1].stageStar = starCount;
+        if (stageManager.stageStar.stageStar[stageNum - 1] < starCount)
+            stageManager.stageStar.stageStar[stageNum - 1] = starCount;
         completed = false;
     }
     private void Timer()
