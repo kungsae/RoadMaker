@@ -165,7 +165,7 @@ public class GridBuildingSystem : MonoBehaviour
 					Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 					if (Physics.Raycast(ray, out RaycastHit hit, 999f, roadLayer))
 					{
-						Collider builtObj = hit.collider;
+						Collider builtObj = hit.collider;	
 
 						if (gridObject.CanOtherBuild())
 						{

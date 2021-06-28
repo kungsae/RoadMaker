@@ -15,13 +15,13 @@ F:/unity/RoadMakerSoucetree/RoadMaker
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53517
+63967
 Successfully changed project path to: F:/unity/RoadMakerSoucetree/RoadMaker
 F:/unity/RoadMakerSoucetree/RoadMaker
 Using Asset Import Pipeline V2.
 Setting a NavMeshArea cost less than one can give unexpected results.
 
-Refreshing native plugins compatible for Editor in 28.31 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 27.83 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.2f1 (8fd9074bf66c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/Resources/UnitySubsystems
@@ -37,92 +37,129 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56392
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56184
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002824 seconds.
+Registered in 0.002579 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 28.66 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 27.12 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.310 seconds
+- Completed reload, in  1.873 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001254 seconds.
+Registered in 0.001283 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.870 seconds
+- Completed reload, in  0.777 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1241 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 66.6 MB.
 System memory in use after: 66.6 MB.
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 1697.
-Total: 1.891400 ms (FindLiveObjects: 0.227100 ms CreateObjectMapping: 0.066800 ms MarkObjects: 1.459400 ms  DeleteObjects: 0.137000 ms)
+Total: 1.723300 ms (FindLiveObjects: 0.138000 ms CreateObjectMapping: 0.045000 ms MarkObjects: 1.416200 ms  DeleteObjects: 0.123100 ms)
+
+========================================================================
+Received Prepare
+Setting a NavMeshArea cost less than one can give unexpected results.
+
+Refreshing native plugins compatible for Editor in 1.07 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 40.5 MB.
+System memory in use after: 40.6 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1697.
+Total: 1.916500 ms (FindLiveObjects: 0.148900 ms CreateObjectMapping: 0.043600 ms MarkObjects: 1.632400 ms  DeleteObjects: 0.090200 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/02 Script/Stage/SceneLoad.cs
-  artifactKey: Guid(40beaffe477324545b90ca16a0dbb293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02 Script/Stage/SceneLoad.cs using Guid(40beaffe477324545b90ca16a0dbb293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bb0658b8b773e9dfebc7c8826fb9582') in 0.139939 seconds
-  Import took 0.142429 seconds .
+  path: Assets/01 Scenes/Stage8.unity
+  artifactKey: Guid(c4e64bec1d57a854ba4f06c9953c8204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01 Scenes/Stage8.unity using Guid(c4e64bec1d57a854ba4f06c9953c8204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '207a2c4ffd48f267d8e4a4897c0c1108') in 0.010376 seconds
+  Import took 0.012411 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.567833 seconds.
-  path: Assets/01 Scenes/Stage.unity
-  artifactKey: Guid(f04dd005a98df3342835ff6678b440c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage.unity using Guid(f04dd005a98df3342835ff6678b440c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '866ff4e1adbad2b7e230dcd7f4238796') in 0.013921 seconds
-  Import took 0.016850 seconds .
+  Time since last request: 68.134620 seconds.
+  path: Assets/01 Scenes/Stage7.unity
+  artifactKey: Guid(e4cd5bf2d0d533d479de89a2d5f7490e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/01 Scenes/Stage7.unity using Guid(e4cd5bf2d0d533d479de89a2d5f7490e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38c40dbd840b0acadeb06e8cadc80c12') in 0.002781 seconds
+  Import took 0.005386 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.151060 seconds.
+  path: Assets/04 Prefabs/CustomPrefabs/Road/Can'tBulid.prefab
+  artifactKey: Guid(3776e39e973265f469b07ace310bd6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/04 Prefabs/CustomPrefabs/Road/Can'tBulid.prefab using Guid(3776e39e973265f469b07ace310bd6c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2d6ed1b92082fa6de2a9bac7454cca1') in 0.088417 seconds
+  Import took 0.090822 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.993848 seconds.
+  path: Assets/04 Prefabs/CustomPrefabs/Road/Road_1.prefab
+  artifactKey: Guid(d9ca3cf7741544149a6d75a66bc0c466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/04 Prefabs/CustomPrefabs/Road/Road_1.prefab using Guid(d9ca3cf7741544149a6d75a66bc0c466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f1bdc366f851ff205470e148137e29') in 0.325452 seconds
+  Import took 0.327711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 206.777979 seconds.
+  path: Assets/02 Script/Grid/GridBuildingSystem.cs
+  artifactKey: Guid(516fd774a03527c41ba8a4e618fa4a02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/02 Script/Grid/GridBuildingSystem.cs using Guid(516fd774a03527c41ba8a4e618fa4a02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dc5275a1d17b15f93ad0c9e8e4e7561') in 0.013308 seconds
+  Import took 0.015497 seconds .
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.002493 seconds.
+Registered in 0.002000 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.31 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.970 seconds
+- Completed reload, in  0.741 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.8 MB.
-System memory in use after: 64.9 MB.
+System memory in use before: 68.0 MB.
+System memory in use after: 68.1 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1700.
-Total: 1.760900 ms (FindLiveObjects: 0.122400 ms CreateObjectMapping: 0.035800 ms MarkObjects: 1.506900 ms  DeleteObjects: 0.094800 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1708.
+Total: 1.658900 ms (FindLiveObjects: 0.119300 ms CreateObjectMapping: 0.033800 ms MarkObjects: 1.420700 ms  DeleteObjects: 0.084100 ms)
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001210 seconds.
+Registered in 0.001386 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
@@ -131,56 +168,23 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.750 seconds
+- Completed reload, in  0.731 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 64.9 MB.
+System memory in use before: 68.0 MB.
+System memory in use after: 68.1 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1703.
-Total: 2.288300 ms (FindLiveObjects: 0.172100 ms CreateObjectMapping: 0.049100 ms MarkObjects: 1.959100 ms  DeleteObjects: 0.106300 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001816 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.859 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1706.
-Total: 3.182200 ms (FindLiveObjects: 0.409500 ms CreateObjectMapping: 0.088400 ms MarkObjects: 2.547300 ms  DeleteObjects: 0.134100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 157.000387 seconds.
-  path: Assets/01 Scenes/Stage1.unity
-  artifactKey: Guid(4d9581685368ec342b23e634a5db57b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage1.unity using Guid(4d9581685368ec342b23e634a5db57b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25dcc94b7627e3c659e8859599409a13') in 0.014598 seconds
-  Import took 0.016806 seconds .
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1711.
+Total: 1.722600 ms (FindLiveObjects: 0.137300 ms CreateObjectMapping: 0.034800 ms MarkObjects: 1.462100 ms  DeleteObjects: 0.087200 ms)
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001795 seconds.
+Registered in 0.001402 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
@@ -189,47 +193,98 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.717 seconds
+- Completed reload, in  0.740 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
+System memory in use before: 68.1 MB.
+System memory in use after: 68.1 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1709.
-Total: 1.726300 ms (FindLiveObjects: 0.133000 ms CreateObjectMapping: 0.036500 ms MarkObjects: 1.469400 ms  DeleteObjects: 0.086500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 43.137200 seconds.
-  path: Assets/01 Scenes/Stage1.unity
-  artifactKey: Guid(4d9581685368ec342b23e634a5db57b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage1.unity using Guid(4d9581685368ec342b23e634a5db57b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5302a438354755226ded876f8fbca60') in 0.013449 seconds
-  Import took 0.015557 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 60.770383 seconds.
-  path: Assets/01 Scenes/Stage1.unity
-  artifactKey: Guid(4d9581685368ec342b23e634a5db57b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage1.unity using Guid(4d9581685368ec342b23e634a5db57b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b823a12e89f556775ab2396999674c') in 0.003209 seconds
-  Import took 0.005515 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.980137 seconds.
-  path: Assets/01 Scenes/Stage2.unity
-  artifactKey: Guid(99b648e407220534cad71b9c00702b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage2.unity using Guid(99b648e407220534cad71b9c00702b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1fb9757a8fa142d8f739d02569a2033') in 0.002809 seconds
-  Import took 0.005047 seconds .
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1714.
+Total: 1.753200 ms (FindLiveObjects: 0.121500 ms CreateObjectMapping: 0.033500 ms MarkObjects: 1.511000 ms  DeleteObjects: 0.086400 ms)
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001317 seconds.
+Registered in 0.001295 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.745 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.1 MB.
+System memory in use after: 68.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1717.
+Total: 1.776300 ms (FindLiveObjects: 0.158500 ms CreateObjectMapping: 0.042500 ms MarkObjects: 1.475100 ms  DeleteObjects: 0.098700 ms)
+
+========================================================================
+Received Prepare
+Setting a NavMeshArea cost less than one can give unexpected results.
+
+Registering precompiled user dll's ...
+Registered in 0.001501 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.729 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.1 MB.
+System memory in use after: 68.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1720.
+Total: 1.732300 ms (FindLiveObjects: 0.124600 ms CreateObjectMapping: 0.033800 ms MarkObjects: 1.484500 ms  DeleteObjects: 0.088400 ms)
+
+========================================================================
+Received Prepare
+Setting a NavMeshArea cost less than one can give unexpected results.
+
+Registering precompiled user dll's ...
+Registered in 0.001336 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.730 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.1 MB.
+System memory in use after: 68.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1723.
+Total: 1.980900 ms (FindLiveObjects: 0.155200 ms CreateObjectMapping: 0.041700 ms MarkObjects: 1.683500 ms  DeleteObjects: 0.099200 ms)
+
+========================================================================
+Received Prepare
+Setting a NavMeshArea cost less than one can give unexpected results.
+
+Registering precompiled user dll's ...
+Registered in 0.001299 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
@@ -240,104 +295,37 @@ RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.732 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1712.
-Total: 1.853800 ms (FindLiveObjects: 0.151700 ms CreateObjectMapping: 0.042100 ms MarkObjects: 1.555800 ms  DeleteObjects: 0.103000 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001266 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.727 seconds
-Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
+System memory in use before: 68.1 MB.
+System memory in use after: 68.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1715.
-Total: 1.859100 ms (FindLiveObjects: 0.193400 ms CreateObjectMapping: 0.042600 ms MarkObjects: 1.522000 ms  DeleteObjects: 0.100300 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1726.
+Total: 1.652800 ms (FindLiveObjects: 0.139400 ms CreateObjectMapping: 0.033800 ms MarkObjects: 1.389700 ms  DeleteObjects: 0.088800 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 37.712932 seconds.
-  path: Assets/01 Scenes/Stage3.unity
-  artifactKey: Guid(2879ab8fe1639e04fb8b227f363b38e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage3.unity using Guid(2879ab8fe1639e04fb8b227f363b38e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de93417364ad811ded68a7c6131eef9e') in 0.010542 seconds
-  Import took 0.012550 seconds .
+  Time since last request: 649.699988 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e696a11220914b864c3a4dce9f2e13e') in 0.014128 seconds
+  Import took 0.016296 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019736 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e696a11220914b864c3a4dce9f2e13e') in 0.002805 seconds
+  Import took 0.005169 seconds .
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001118 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.742 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1718.
-Total: 1.710000 ms (FindLiveObjects: 0.146200 ms CreateObjectMapping: 0.033300 ms MarkObjects: 1.304100 ms  DeleteObjects: 0.225800 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.002156 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.816 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.0 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1721.
-Total: 1.758300 ms (FindLiveObjects: 0.132400 ms CreateObjectMapping: 0.034900 ms MarkObjects: 1.496200 ms  DeleteObjects: 0.094200 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001210 seconds.
+Registered in 0.001884 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
@@ -346,204 +334,39 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.908 seconds
+- Completed reload, in  0.850 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.0 MB.
+System memory in use before: 68.1 MB.
+System memory in use after: 68.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1724.
-Total: 2.825300 ms (FindLiveObjects: 0.148100 ms CreateObjectMapping: 0.040900 ms MarkObjects: 2.508500 ms  DeleteObjects: 0.126200 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1729.
+Total: 1.953400 ms (FindLiveObjects: 0.208900 ms CreateObjectMapping: 0.057800 ms MarkObjects: 1.589400 ms  DeleteObjects: 0.095400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 426.902742 seconds.
-  path: Assets/01 Scenes/Stage6.unity
-  artifactKey: Guid(b38b58dbb73ca0148ad1792f4821e960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage6.unity using Guid(b38b58dbb73ca0148ad1792f4821e960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e36df19d2b3e4e3b4fd40c343782b9f') in 0.013572 seconds
-  Import took 0.015849 seconds .
+  Time since last request: 130.377615 seconds.
+  path: Assets/04 Prefabs/CustomPrefabs/Car_1.prefab
+  artifactKey: Guid(074e229fa1fd32345997c22eb4eeaa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/04 Prefabs/CustomPrefabs/Car_1.prefab using Guid(074e229fa1fd32345997c22eb4eeaa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0f2b992c275fe141b0986d6968ecad1') in 0.058501 seconds
+  Import took 0.061077 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.431460 seconds.
+  path: Assets/04 Prefabs/CustomPrefabs/Car_1.prefab
+  artifactKey: Guid(074e229fa1fd32345997c22eb4eeaa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/04 Prefabs/CustomPrefabs/Car_1.prefab using Guid(074e229fa1fd32345997c22eb4eeaa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94ffb8c6e9ce78544d4387382ed3b85c') in 0.106374 seconds
+  Import took 0.108723 seconds .
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001503 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.849 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1727.
-Total: 2.674900 ms (FindLiveObjects: 0.303900 ms CreateObjectMapping: 0.073800 ms MarkObjects: 2.197900 ms  DeleteObjects: 0.097800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.164005 seconds.
-  path: Assets/01 Scenes/Stage6.unity
-  artifactKey: Guid(b38b58dbb73ca0148ad1792f4821e960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage6.unity using Guid(b38b58dbb73ca0148ad1792f4821e960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c355df2a70dc629083156fb5d187e6c') in 0.012320 seconds
-  Import took 0.014281 seconds .
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001431 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.726 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1730.
-Total: 1.715800 ms (FindLiveObjects: 0.124600 ms CreateObjectMapping: 0.035200 ms MarkObjects: 1.470600 ms  DeleteObjects: 0.084500 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001127 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.711 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1733.
-Total: 1.554400 ms (FindLiveObjects: 0.145100 ms CreateObjectMapping: 0.036600 ms MarkObjects: 1.280600 ms  DeleteObjects: 0.090800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 140.781109 seconds.
-  path: Assets/01 Scenes/Stage7.unity
-  artifactKey: Guid(e89137d98586382418cbbd861648e65d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage7.unity using Guid(e89137d98586382418cbbd861648e65d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c70bba88c70aa9e4c799793357957f4c') in 0.010379 seconds
-  Import took 0.012634 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 20.190313 seconds.
-  path: Assets/01 Scenes/Stage.unity
-  artifactKey: Guid(f04dd005a98df3342835ff6678b440c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage.unity using Guid(f04dd005a98df3342835ff6678b440c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a8cc0f41827bac2454d4d6f84d9b991') in 0.002909 seconds
-  Import took 0.004801 seconds .
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001570 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.762 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1736.
-Total: 1.734700 ms (FindLiveObjects: 0.134500 ms CreateObjectMapping: 0.037900 ms MarkObjects: 1.470500 ms  DeleteObjects: 0.090700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 759.134380 seconds.
-  path: Assets/01 Scenes/Stage8.unity
-  artifactKey: Guid(35672766abd182545ac9eeef527a18ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage8.unity using Guid(35672766abd182545ac9eeef527a18ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bda45a569a6d3fdc8d7a33e1e0600425') in 0.013604 seconds
-  Import took 0.015993 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 47.341955 seconds.
-  path: Assets/02 Script/GameManager.cs
-  artifactKey: Guid(d89e2bb68ffc58649854231afe837c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02 Script/GameManager.cs using Guid(d89e2bb68ffc58649854231afe837c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '356867f734e24fccb0eb30c0f044e59e') in 0.003090 seconds
-  Import took 0.005159 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002066 seconds.
-  path: Assets/02 Script/GameManager.cs
-  artifactKey: Guid(d89e2bb68ffc58649854231afe837c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/02 Script/GameManager.cs using Guid(d89e2bb68ffc58649854231afe837c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '356867f734e24fccb0eb30c0f044e59e') in 0.002805 seconds
-  Import took 0.004771 seconds .
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001253 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.749 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1739.
-Total: 1.788300 ms (FindLiveObjects: 0.180200 ms CreateObjectMapping: 0.038900 ms MarkObjects: 1.475500 ms  DeleteObjects: 0.093000 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001131 seconds.
+Registered in 0.001309 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
@@ -557,42 +380,68 @@ Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.2 MB.
+System memory in use before: 68.2 MB.
+System memory in use after: 68.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1742.
-Total: 1.819300 ms (FindLiveObjects: 0.141300 ms CreateObjectMapping: 0.038800 ms MarkObjects: 1.537600 ms  DeleteObjects: 0.100400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 99.044818 seconds.
-  path: Assets/01 Scenes/Stage2.unity
-  artifactKey: Guid(99b648e407220534cad71b9c00702b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage2.unity using Guid(99b648e407220534cad71b9c00702b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '934c78254d7322fc3e6579a49297560c') in 0.011141 seconds
-  Import took 0.013482 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 30.010113 seconds.
-  path: Assets/01 Scenes/Stage5.unity
-  artifactKey: Guid(31870eb6b99e66546a7433b7be6d960d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage5.unity using Guid(31870eb6b99e66546a7433b7be6d960d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a84ab2ad9a769449c81a7ba9bef6ed') in 0.003434 seconds
-  Import took 0.005697 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 67.754594 seconds.
-  path: Assets/01 Scenes/Stage4.unity
-  artifactKey: Guid(4951a5c7d5d43504fb7320e71695ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage4.unity using Guid(4951a5c7d5d43504fb7320e71695ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '293290cf58c28b62ef5735b21c64fef9') in 0.003831 seconds
-  Import took 0.006257 seconds .
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1733.
+Total: 1.765100 ms (FindLiveObjects: 0.182300 ms CreateObjectMapping: 0.037900 ms MarkObjects: 1.452300 ms  DeleteObjects: 0.091700 ms)
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001227 seconds.
+Registered in 0.001692 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.719 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.2 MB.
+System memory in use after: 68.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1736.
+Total: 1.803600 ms (FindLiveObjects: 0.131400 ms CreateObjectMapping: 0.036600 ms MarkObjects: 1.542800 ms  DeleteObjects: 0.092100 ms)
+
+========================================================================
+Received Prepare
+Setting a NavMeshArea cost less than one can give unexpected results.
+
+Registering precompiled user dll's ...
+Registered in 0.002436 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.767 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.2 MB.
+System memory in use after: 68.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1739.
+Total: 3.008200 ms (FindLiveObjects: 0.311100 ms CreateObjectMapping: 0.103700 ms MarkObjects: 2.410700 ms  DeleteObjects: 0.177800 ms)
+
+========================================================================
+Received Prepare
+Setting a NavMeshArea cost less than one can give unexpected results.
+
+Registering precompiled user dll's ...
+Registered in 0.001552 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
@@ -601,189 +450,23 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.711 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.2 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1745.
-Total: 1.891000 ms (FindLiveObjects: 0.149700 ms CreateObjectMapping: 0.096500 ms MarkObjects: 1.549800 ms  DeleteObjects: 0.094000 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001710 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.010 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.2 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1748.
-Total: 1.693300 ms (FindLiveObjects: 0.154800 ms CreateObjectMapping: 0.039700 ms MarkObjects: 1.397300 ms  DeleteObjects: 0.100000 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.002153 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.180 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.2 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1751.
-Total: 2.541100 ms (FindLiveObjects: 0.193300 ms CreateObjectMapping: 0.079200 ms MarkObjects: 2.154600 ms  DeleteObjects: 0.112300 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001165 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.727 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.2 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1754.
-Total: 1.748500 ms (FindLiveObjects: 0.127200 ms CreateObjectMapping: 0.033700 ms MarkObjects: 1.489400 ms  DeleteObjects: 0.097100 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.002910 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.019 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.2 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1757.
-Total: 2.571900 ms (FindLiveObjects: 0.278300 ms CreateObjectMapping: 0.069800 ms MarkObjects: 2.110400 ms  DeleteObjects: 0.111500 ms)
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.002191 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.147 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.2 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1760.
-Total: 2.913000 ms (FindLiveObjects: 0.380400 ms CreateObjectMapping: 0.086400 ms MarkObjects: 2.298300 ms  DeleteObjects: 0.145500 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 4405.962647 seconds.
-  path: Assets/06.Sprite/Traffic_help_1_fix.png
-  artifactKey: Guid(5a7208d533f95464493c3fc75764e913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/06.Sprite/Traffic_help_1_fix.png using Guid(5a7208d533f95464493c3fc75764e913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77f954891118f2c017152644f198b9a9') in 0.185397 seconds
-  Import took 0.187838 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.220131 seconds.
-  path: Assets/06.Sprite/Traffic_help_1_fix.png
-  artifactKey: Guid(5a7208d533f95464493c3fc75764e913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/06.Sprite/Traffic_help_1_fix.png using Guid(5a7208d533f95464493c3fc75764e913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2de3ac415ff6719d6e3f192dc9b90373') in 0.047096 seconds
-  Import took 0.049407 seconds .
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001226 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.799 seconds
+- Completed reload, in  0.738 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 68.2 MB.
-System memory in use after: 68.3 MB.
+System memory in use after: 68.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1770.
-Total: 1.791400 ms (FindLiveObjects: 0.275500 ms CreateObjectMapping: 0.039300 ms MarkObjects: 1.370400 ms  DeleteObjects: 0.103900 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1742.
+Total: 1.839000 ms (FindLiveObjects: 0.159500 ms CreateObjectMapping: 0.041100 ms MarkObjects: 1.533000 ms  DeleteObjects: 0.103900 ms)
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001569 seconds.
+Registered in 0.001446 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
@@ -792,7 +475,7 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.728 seconds
+- Completed reload, in  0.732 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -800,81 +483,32 @@ Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 68.2 MB.
 System memory in use after: 68.3 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1773.
-Total: 1.862100 ms (FindLiveObjects: 0.171900 ms CreateObjectMapping: 0.051600 ms MarkObjects: 1.535300 ms  DeleteObjects: 0.101700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 2220.295660 seconds.
-  path: Assets/01 Scenes/Stage2.unity
-  artifactKey: Guid(99b648e407220534cad71b9c00702b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage2.unity using Guid(99b648e407220534cad71b9c00702b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa13f1e77e92ad7997b10e3d670094c3') in 0.014086 seconds
-  Import took 0.016836 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.635753 seconds.
-  path: Assets/01 Scenes/Stage3.unity
-  artifactKey: Guid(2879ab8fe1639e04fb8b227f363b38e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage3.unity using Guid(2879ab8fe1639e04fb8b227f363b38e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dff7008647a909e6d62a538da43c9e2d') in 0.003445 seconds
-  Import took 0.005701 seconds .
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1745.
+Total: 1.701500 ms (FindLiveObjects: 0.132200 ms CreateObjectMapping: 0.036800 ms MarkObjects: 1.440200 ms  DeleteObjects: 0.091200 ms)
 
 ========================================================================
 Received Prepare
 Setting a NavMeshArea cost less than one can give unexpected results.
 
 Registering precompiled user dll's ...
-Registered in 0.001171 seconds.
+Registered in 0.001321 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.716 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 68.3 MB.
-System memory in use after: 68.3 MB.
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1776.
-Total: 1.759500 ms (FindLiveObjects: 0.138000 ms CreateObjectMapping: 0.035000 ms MarkObjects: 1.491200 ms  DeleteObjects: 0.093800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.866483 seconds.
-  path: Assets/01 Scenes/Stage4.unity
-  artifactKey: Guid(4951a5c7d5d43504fb7320e71695ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/01 Scenes/Stage4.unity using Guid(4951a5c7d5d43504fb7320e71695ede3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84b3915a2e62bcba73f53a52b127b3dd') in 0.013453 seconds
-  Import took 0.015850 seconds .
-
-========================================================================
-Received Prepare
-Setting a NavMeshArea cost less than one can give unexpected results.
-
-Registering precompiled user dll's ...
-Registered in 0.001218 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.730 seconds
+- Completed reload, in  0.729 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1219 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 68.3 MB.
+System memory in use before: 68.2 MB.
 System memory in use after: 68.3 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1779.
-Total: 1.705100 ms (FindLiveObjects: 0.125100 ms CreateObjectMapping: 0.033400 ms MarkObjects: 1.458600 ms  DeleteObjects: 0.087300 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1748.
+Total: 1.781300 ms (FindLiveObjects: 0.131300 ms CreateObjectMapping: 0.033300 ms MarkObjects: 1.516800 ms  DeleteObjects: 0.098900 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

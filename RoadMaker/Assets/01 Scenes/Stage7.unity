@@ -2234,7 +2234,7 @@ MonoBehaviour:
   stageNum: 7
   isGameOver: 0
   timeLimit:
-  - 2
+  - 2.5
   - 3
   - 4
 --- !u!4 &1099228091
