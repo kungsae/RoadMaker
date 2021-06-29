@@ -21,13 +21,12 @@ public class GridBuildingSystem : MonoBehaviour
 	[SerializeField] LayerMask roadLayer;
 	public int roadObjIndex = 0;
 	public int allPrice;
-
+	
 	int roadsIndex;
 	[HideInInspector] public int dir = 0;
 
 	[SerializeField] int gridX;
 	[SerializeField] int gridZ;
-
 	public class CarPos
 	{
 		Vector3 pos;

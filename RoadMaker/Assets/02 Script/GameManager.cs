@@ -51,10 +51,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image[] star;
     [SerializeField] Sprite[] starImage;
     [SerializeField] Text[] timeLimitText;
+    
 
 
     void Start()
     {
+        
         grid = FindObjectOfType<GridBuildingSystem>();
         stageManager = FindObjectOfType<StageManager>();
         Time.timeScale = 0;
@@ -180,9 +182,9 @@ public class GameManager : MonoBehaviour
     }
     private void Clear()
     {
-        if (isClear&&stageManager.LastClearStage < stageNum + 1)
+        if (isClear&&stageManager.stageStar.LastClearStage < stageNum + 1)
         {
-            stageManager.LastClearStage = stageNum + 1;
+            stageManager.stageStar.LastClearStage = stageNum + 1;
         }
         clearUI.gameObject.SetActive(true);
         clearUI.transform.localPosition = new Vector3(0, -650);
@@ -223,17 +225,17 @@ public class GameManager : MonoBehaviour
     }
 	public void BackToStage()
     {
-        if (isClear && stageManager.LastClearStage < stageNum + 1)
+        if (isClear && stageManager.stageStar.LastClearStage < stageNum + 1)
         {
-            stageManager.LastClearStage = stageNum+1;
+            stageManager.stageStar.LastClearStage = stageNum+1;
         }
         SceneManager.LoadScene("Stage");
     }
     public void NextStage()
     {
-        if (isClear && stageManager.LastClearStage < stageNum + 1)
+        if (isClear && stageManager.stageStar.LastClearStage < stageNum + 1)
         {
-            stageManager.LastClearStage = stageNum + 1;
+            stageManager.stageStar.LastClearStage = stageNum + 1;
         }
         SceneManager.LoadScene("Stage" + (stageNum + 1));
     }

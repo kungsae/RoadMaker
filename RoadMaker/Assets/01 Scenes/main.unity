@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &234880442
@@ -619,14 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6180b9e355e538540af3572582950be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageButton: []
-  lockImage: []
-  stageManager: {fileID: 0}
-  totalStar: 0
-  maxOpenStage: 0
-  stars: []
-  starCount: 
-  panel: {fileID: 0}
 --- !u!1 &1755344267
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,9 +648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2535eb581b6fc147ac225748b2f4f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LastClearStage: 0
   stageStar:
     stageStar: 
+    LastClearStage: 0
 --- !u!4 &1755344269
 Transform:
   m_ObjectHideFlags: 0
@@ -705,10 +697,10 @@ RectTransform:
   m_Father: {fileID: 687548172}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -300}
-  m_SizeDelta: {x: 0, y: 200}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 500}
+  m_SizeDelta: {x: 1280, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848947992
 MonoBehaviour:

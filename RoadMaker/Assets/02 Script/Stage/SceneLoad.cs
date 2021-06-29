@@ -25,9 +25,9 @@ public class SceneLoad : MonoBehaviour
 			starCount.Add(stageManager.stageStar.stageStar[i]);
 		}
 
-		if (maxOpenStage <= stageManager.LastClearStage)
+		if (maxOpenStage <= stageManager.stageStar.LastClearStage)
 		{
-			maxOpenStage = stageManager.LastClearStage;
+			maxOpenStage = stageManager.stageStar.LastClearStage;
 			
 		}
 		for (int i = 0; i < stageButton.Count; i++)
@@ -44,10 +44,6 @@ public class SceneLoad : MonoBehaviour
 			totalStar += starCount[i];
 		}
 	}
-	void OnApplicationQuit()
-	{
-		Save();
-	}
 	private void stageStart(int stageLevel)
 	{
 		if (maxOpenStage >= stageLevel)
@@ -57,20 +53,4 @@ public class SceneLoad : MonoBehaviour
 	{
 		panel.gameObject.SetActive(on);
 	}
-	public void Save()
-	{
-		string json = JsonUtility.ToJson(stageManager.stageStar);
-		Debug.Log(json);
-		File.WriteAllText(Application.persistentDataPath + "/data.json", json);
-	}
-	public void Load()
-	{
-		if (File.Exists(Application.persistentDataPath + "/data.json"))
-		{
-			string json = File.ReadAllText(Application.persistentDataPath + "/data.json");
-			StageDataList list = JsonUtility.FromJson<StageDataList>(json);
-			stageManager.stageStar.stageStar = list.stageStar;
-		}
-	}
-
 }
