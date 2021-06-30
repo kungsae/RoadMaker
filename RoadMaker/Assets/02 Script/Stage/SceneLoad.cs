@@ -12,12 +12,14 @@ public class SceneLoad : MonoBehaviour
 	StageManager stageManager;
 	private int totalStar = 0;
 	private int maxOpenStage = 1;
-	[SerializeField] private List<Star>stars = new List<Star>();
+	[SerializeField] private List<Star> stars = new List<Star>();
 	private List<int> starCount = new List<int>();
 	public GameObject panel;
+	Sound sound;
 
 	private void Start()
 	{
+		sound = FindObjectOfType<Sound>();
 		stageManager = FindObjectOfType<StageManager>();
 
 		for (int i = 0; i < stageManager.stageStar.stageStar.Count; i++)
@@ -28,7 +30,7 @@ public class SceneLoad : MonoBehaviour
 		if (maxOpenStage <= stageManager.stageStar.LastClearStage)
 		{
 			maxOpenStage = stageManager.stageStar.LastClearStage;
-			
+
 		}
 		for (int i = 0; i < stageButton.Count; i++)
 		{
@@ -52,5 +54,13 @@ public class SceneLoad : MonoBehaviour
 	public void onHelp(bool on)
 	{
 		panel.gameObject.SetActive(on);
+	}
+	public void ExitGame()
+	{
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
 	}
 }

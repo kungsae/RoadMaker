@@ -8,21 +8,29 @@ public class Main : MonoBehaviour
 {
 	[SerializeField] GameObject title;
 	[SerializeField] GameObject button;
+	AudioSource audio;
+	public AudioClip[] sound;
 	public void GameStart()
 	{
 		SceneManager.LoadScene("Stage");
 	}
 	private void Start()
 	{
-
-		StartCoroutine(wait());
+		audio = GetComponent<AudioSource>();
+		StartCoroutine(TilteStart());
 
 		button.transform.DOScale(button.transform.localScale + new Vector3(0.1f,0.1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
 	}
-	IEnumerator wait()
+	IEnumerator TilteStart()
 	{
-		title.transform.DOLocalMoveY(60f, 2f).SetEase(Ease.OutQuad);
-		yield return new WaitForSeconds(1.5f);
-		button.transform.DOLocalMoveY(-150f, 0.5f).SetEase(Ease.OutQuad);
+		yield return new WaitForSeconds(0.5f);
+		audio.clip = sound[0];
+		audio.Play();
+		title.transform.DOLocalMoveY(60f, 1.1f).SetEase(Ease.InExpo);
+		yield return new WaitForSeconds(1.1f);
+		title.transform.DOShakeRotation(0.2f,5f);
+		audio.clip = sound[1];
+		audio.Play();
+		button.SetActive(true);
 	}
 }

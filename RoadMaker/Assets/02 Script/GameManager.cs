@@ -51,12 +51,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image[] star;
     [SerializeField] Sprite[] starImage;
     [SerializeField] Text[] timeLimitText;
-    
+    Sound sound;
 
 
     void Start()
     {
-        
+        sound = FindObjectOfType<Sound>();
         grid = FindObjectOfType<GridBuildingSystem>();
         stageManager = FindObjectOfType<StageManager>();
         Time.timeScale = 0;
@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
     }
 	public void StartGame()
     {
+        sound.playSound(4);
         if (maxPrice >= grid.allPrice)
         {
             isStart = true;
@@ -107,8 +108,9 @@ public class GameManager : MonoBehaviour
     }
     public void EndGame()
     {
-		//SceneManager.LoadScene("Stage" + stageNum);
-		isStart = false;
+        //SceneManager.LoadScene("Stage" + stageNum);
+        sound.playSound(4);
+        isStart = false;
 		isClear = false;
         completed = true;
         isGameOver = false;
@@ -142,7 +144,7 @@ public class GameManager : MonoBehaviour
 	}
     public void ResetGame()
     {
-         SceneManager.LoadScene("Stage"+stageNum);
+        SceneManager.LoadScene("Stage"+stageNum);
     }
     public void RoadUI(int num)
     {
@@ -204,6 +206,7 @@ public class GameManager : MonoBehaviour
 		}
         if (stageManager.stageStar.stageStar[stageNum - 1] < starCount)
             stageManager.stageStar.stageStar[stageNum - 1] = starCount;
+        sound.playSound(2);
         completed = false;
     }
     private void Timer()
@@ -222,6 +225,7 @@ public class GameManager : MonoBehaviour
         clearChcekText.color = Color.red;
         timeText[1].gameObject.SetActive(false);
         button[button.Length - 1].SetActive(false);
+        sound.playSound(3);
     }
 	public void BackToStage()
     {

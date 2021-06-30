@@ -21,7 +21,8 @@ public class GridBuildingSystem : MonoBehaviour
 	[SerializeField] LayerMask roadLayer;
 	public int roadObjIndex = 0;
 	public int allPrice;
-	
+
+	private Sound sound;
 	int roadsIndex;
 	[HideInInspector] public int dir = 0;
 
@@ -47,6 +48,7 @@ public class GridBuildingSystem : MonoBehaviour
 		int girdwidth = gridX;
 		int gridHeigth = gridZ;
 		float cellSize = 4f;
+		sound = FindObjectOfType<Sound>();
 		grid = new GridXZ<GridObject>(girdwidth, gridHeigth, cellSize, Vector3.zero, (GridXZ<GridObject> g, int x, int z) => new GridObject(g, x, z));
 		roadObj[roadObjIndex].GetComponent<RoadObj>().Rotate(dir);
 		ghostTrn.GetComponent<RoadObj>().Rotate(dir);
@@ -140,6 +142,7 @@ public class GridBuildingSystem : MonoBehaviour
 						gridObject.price = (roadObjIndex + 1) * 100;
 						allPrice += gridObject.price;
 						SetText();
+						sound.playSound(0);
 					}
 					if (gridObject.CanOtherBuild() && roadObjIndex == 4)
 					{
@@ -149,7 +152,9 @@ public class GridBuildingSystem : MonoBehaviour
 						gridObject.otherPrice = 300;
 						allPrice += gridObject.otherPrice;
 						SetText();
+						sound.playSound(0);
 					}
+					
 				}
 			}
 		}
@@ -183,6 +188,7 @@ public class GridBuildingSystem : MonoBehaviour
 							gridObject.ClrearTrn();
 						}
 						Destroy(builtObj.gameObject);
+						sound.playSound(1);
 						roadsIndex = roads.Count;
 						SetText();
 						for (int i = 0; i < roadsIndex; i++)
@@ -247,17 +253,5 @@ public class GridBuildingSystem : MonoBehaviour
 	}
 	public void Init()
 	{
-		//for (int i = 0; i < roads.Count; i++)
-		//{
-		//	if(roads[i]!=null)
-		//	Destroy(roads[i].gameObject);
-		//}
-		//for (int i = 0; i < startObj.Count; i++)
-		//{
-		//	startObj[i].position = originPos[i];
-		//}
-
-		//roads.Clear();
-
 	}
 }
