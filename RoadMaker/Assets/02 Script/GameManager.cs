@@ -52,15 +52,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] Sprite[] starImage;
     [SerializeField] Text[] timeLimitText;
     Sound sound;
+    Fade fade;
 
 
     void Start()
     {
         sound = FindObjectOfType<Sound>();
+        fade = FindObjectOfType<Fade>();
         grid = FindObjectOfType<GridBuildingSystem>();
         stageManager = FindObjectOfType<StageManager>();
-        Time.timeScale = 0;
-		for (int i = 0; i < 3; i++)
+        sound.playSound(5);
+        //Time.timeScale = 0;
+        for (int i = 0; i < 3; i++)
 		{
             timeLimitText[i].text = $"{timeLimit[i].ToString("00.00")}";
             star[i].sprite = starImage[0];
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour
     }
 	public void StartGame()
     {
+        
         sound.playSound(4);
         if (maxPrice >= grid.allPrice)
         {
@@ -102,7 +106,7 @@ public class GameManager : MonoBehaviour
 
                 }
             }
-
+            
             grid.ghostTrn.gameObject.SetActive(false);
         }
     }
@@ -139,12 +143,13 @@ public class GameManager : MonoBehaviour
 				_car.nav.enabled = true;
 			}
 		}
-		Time.timeScale = 0;
+		//Time.timeScale = 0;
 		grid.ghostTrn.gameObject.SetActive(true);
 	}
     public void ResetGame()
     {
-        SceneManager.LoadScene("Stage"+stageNum);
+        sound.playSound(4);
+        StartCoroutine(fade.FadeOut("Stage",stageNum));
     }
     public void RoadUI(int num)
     {
@@ -233,7 +238,8 @@ public class GameManager : MonoBehaviour
         {
             stageManager.stageStar.LastClearStage = stageNum+1;
         }
-        SceneManager.LoadScene("Stage");
+        sound.playSound(4);
+        StartCoroutine(fade.FadeOut("Stage"));
     }
     public void NextStage()
     {
@@ -241,6 +247,7 @@ public class GameManager : MonoBehaviour
         {
             stageManager.stageStar.LastClearStage = stageNum + 1;
         }
-        SceneManager.LoadScene("Stage" + (stageNum + 1));
+        sound.playSound(4);
+        StartCoroutine(fade.FadeOut("Stage",(stageNum+1)));
     }
 }

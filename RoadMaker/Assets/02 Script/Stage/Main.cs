@@ -9,13 +9,20 @@ public class Main : MonoBehaviour
 	[SerializeField] GameObject title;
 	[SerializeField] GameObject button;
 	AudioSource audio;
+	Fade fade;
 	public AudioClip[] sound;
+	Sound _sound;
 	public void GameStart()
 	{
-		SceneManager.LoadScene("Stage");
+
+		_sound.playSound(4);
+		StartCoroutine(fade.FadeOut("Stage"));
+		
 	}
 	private void Start()
 	{
+		_sound = FindObjectOfType<Sound>();
+		fade = FindObjectOfType<Fade>();
 		audio = GetComponent<AudioSource>();
 		StartCoroutine(TilteStart());
 

@@ -16,9 +16,11 @@ public class SceneLoad : MonoBehaviour
 	private List<int> starCount = new List<int>();
 	public GameObject panel;
 	Sound sound;
+	Fade fade;
 
 	private void Start()
 	{
+		fade = FindObjectOfType<Fade>();
 		sound = FindObjectOfType<Sound>();
 		stageManager = FindObjectOfType<StageManager>();
 
@@ -49,10 +51,15 @@ public class SceneLoad : MonoBehaviour
 	private void stageStart(int stageLevel)
 	{
 		if (maxOpenStage >= stageLevel)
-			SceneManager.LoadScene("Stage" + stageLevel);
+		{
+			sound.playSound(4);
+			StartCoroutine(fade.FadeOut("Stage", stageLevel));
+		}
+			
 	}
 	public void onHelp(bool on)
 	{
+		sound.playSound(4);
 		panel.gameObject.SetActive(on);
 	}
 	public void ExitGame()
