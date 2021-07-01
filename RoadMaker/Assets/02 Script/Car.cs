@@ -10,10 +10,12 @@ public class Car : MonoBehaviour
     [SerializeField]LayerMask mask;
 
     Rigidbody rigid;
+    BoxCollider col;
 
     // Start is called before the first frame update
     void Start()
     {
+        col = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
         rigid = GetComponent<Rigidbody>();
     }
@@ -21,6 +23,7 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Debug.DrawRay(transform.position, Vector3.down, Color.red);
         if (Physics.Raycast(transform.position,Vector3.down, out RaycastHit hit, 999f, mask))
         {   
@@ -47,7 +50,11 @@ public class Car : MonoBehaviour
     public void SetRigidbody(bool value)
 	{
         rigid.isKinematic = value;
-	}
+        rigid.useGravity = !value;
+        col.enabled = !value;
+        nav.enabled = !value;
+
+    }
 
     private void GameOver()
     {
@@ -61,10 +68,10 @@ public class Car : MonoBehaviour
     }
 	private void OnTriggerStay(Collider other)
 	{
-        if (other.gameObject.CompareTag("Stop"))
+        if (other.gameObject.CompareTag("Stop")&& GameManager.Instance.isStart)
         {
-            if(nav.destination!=null)
-            nav.ResetPath();
+            if (nav.destination != null)
+                nav.isStopped = true;
 
         }
         if (other.gameObject.CompareTag("Finish"))
@@ -74,10 +81,10 @@ public class Car : MonoBehaviour
     }
 	private void OnTriggerExit(Collider other)
 	{
-        if (other.gameObject.CompareTag("Stop"))
+        if (other.gameObject.CompareTag("Stop")&& GameManager.Instance.isStart)
         {
             Debug.Log("다시 출발");
-            nav.destination = trn.position;
+            nav.isStopped = false;
         }
     }
 }

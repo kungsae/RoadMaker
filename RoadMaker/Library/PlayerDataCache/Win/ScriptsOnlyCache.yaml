@@ -20,8 +20,6 @@ ScriptsOnlyBuild:
     - DG.Tweening.Core.DOTweenSettings
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -68,8 +66,6 @@ ScriptsOnlyBuild:
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -1174,8 +1170,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1213,7 +1207,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3780}
     - Class: 114
-      Script: {instanceID: 15290}
+      Script: {instanceID: 16892}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1803,4 +1797,4 @@ ScriptsOnlyBuild:
   - Assets/01 Scenes/Stage8.unity
   - Assets/01 Scenes/Stage9.unity
   - Assets/01 Scenes/Stage10.unity
-  playerPath: "F:/unity/\uBE4C\uB4DC\uD30C\uC77C/roadMakerBuild5/RoadMaker.exe"
+  playerPath: "F:/unity/\uBE4C\uB4DC\uD30C\uC77C/roadMakerBuild6/RoadMaker.exe"

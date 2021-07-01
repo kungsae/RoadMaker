@@ -129,10 +129,10 @@ public class GameManager : MonoBehaviour
             car.gameObject.SetActive(true);
             if (car.destination != null&&car.enabled ==true)
             {
-               
+                car.isStopped = true;
                 car.ResetPath();
             }
-            car.isStopped = true;
+
             grid.carObj[i].position = grid.carPosList[i].GetPos();
             grid.carObj[i].eulerAngles = grid.carPosList[i].GetRot();
             car.velocity = new Vector3(0, 0, 0);
