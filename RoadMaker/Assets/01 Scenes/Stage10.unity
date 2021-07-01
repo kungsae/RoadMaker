@@ -1040,7 +1040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820756635735042365, guid: 90c0704fe82245e41a674633dbaa7026, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2820756635735042365, guid: 90c0704fe82245e41a674633dbaa7026, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1243,7 +1243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6679851164430568295, guid: 28e88b45b19b8814ca10dff6f1948744, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6679851164430568295, guid: 28e88b45b19b8814ca10dff6f1948744, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2008,7 +2008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6679851164430568295, guid: 28e88b45b19b8814ca10dff6f1948744, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6679851164430568295, guid: 28e88b45b19b8814ca10dff6f1948744, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3792,7 +3792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820756635735042365, guid: 90c0704fe82245e41a674633dbaa7026, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2820756635735042365, guid: 90c0704fe82245e41a674633dbaa7026, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4841,7 +4841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6679851164430568295, guid: 28e88b45b19b8814ca10dff6f1948744, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.69
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6679851164430568295, guid: 28e88b45b19b8814ca10dff6f1948744, type: 3}
       propertyPath: m_LocalPosition.z

@@ -9,10 +9,13 @@ public class Car : MonoBehaviour
     public Transform trn;
     [SerializeField]LayerMask mask;
 
+    Rigidbody rigid;
+
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+        rigid = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,12 @@ public class Car : MonoBehaviour
 		}
 
     }
+
+    public void SetRigidbody(bool value)
+	{
+        rigid.isKinematic = value;
+	}
+
     private void GameOver()
     {
         if (!GameManager.Instance.isGameOver)
@@ -47,12 +56,14 @@ public class Car : MonoBehaviour
             GameManager.Instance.GameOver();
         }
         nav.ResetPath();
-        nav.enabled = false;
+        nav.isStopped = true;
+        //nav.enabled = false;
     }
 	private void OnTriggerStay(Collider other)
 	{
         if (other.gameObject.CompareTag("Stop"))
         {
+            if(nav.destination!=null)
             nav.ResetPath();
 
         }

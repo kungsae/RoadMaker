@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
                     _car.nav.enabled = false;
                     _car.nav.enabled = true;
                     _car.nav.destination = _car.trn.position;
-
+                    _car.SetRigidbody(false);
                 }
             }
 
@@ -123,12 +123,21 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
         for (int i = 0; i < grid.carObj.Count; i++)
         {
-            grid.carObj[i].gameObject.SetActive(true);
-            if(grid.carObj[i].GetComponent<Car>().nav.destination != null)
-            grid.carObj[i].GetComponent<Car>().nav.ResetPath();
-            grid.carObj[i].GetComponent<Car>().nav.velocity = new Vector3(0,0,0);
+            Car c = grid.carObj[i].GetComponent<Car>();
+            NavMeshAgent car = c.nav;
+            c.SetRigidbody(true);
+            car.gameObject.SetActive(true);
+            if (car.destination != null&&car.enabled ==true)
+            {
+               
+                car.ResetPath();
+            }
+            car.isStopped = true;
             grid.carObj[i].position = grid.carPosList[i].GetPos();
             grid.carObj[i].eulerAngles = grid.carPosList[i].GetRot();
+            car.velocity = new Vector3(0, 0, 0);
+            
+            //car.Stop();
         }
         sec = 0;
 		min = 0;    
