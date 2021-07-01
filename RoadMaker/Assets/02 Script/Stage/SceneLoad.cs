@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SceneLoad : MonoBehaviour
 {
@@ -15,6 +14,7 @@ public class SceneLoad : MonoBehaviour
 	[SerializeField] private List<Star> stars = new List<Star>();
 	private List<int> starCount = new List<int>();
 	public GameObject panel;
+	public GameObject exitPanel;
 	Sound sound;
 	Fade fade;
 
@@ -62,11 +62,25 @@ public class SceneLoad : MonoBehaviour
 		sound.playSound(4);
 		panel.gameObject.SetActive(on);
 	}
+	public void OnExitUI()
+	{
+		sound.playSound(4);
+		exitPanel.transform.DOScale(0, 0);
+		exitPanel.transform.DOScale(1, 0.2f);
+	}
+	public void OffExitUI()
+	{
+		sound.playSound(4);
+		exitPanel.transform.DOScale(1, 0);
+		exitPanel.transform.DOScale(0, 0.2f);
+	}
 	public void ExitGame()
 	{
 #if UNITY_EDITOR
+		sound.playSound(4);
 		UnityEditor.EditorApplication.isPlaying = false;
 #else
+sound.playSound(4);
         Application.Quit();
 #endif
 	}

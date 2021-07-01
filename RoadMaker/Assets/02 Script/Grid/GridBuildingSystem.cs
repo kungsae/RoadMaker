@@ -14,7 +14,7 @@ public class GridBuildingSystem : MonoBehaviour
 	public List<Transform> startObj;
 	public List<Transform> carObj;
 	public List<CarPos> carPosList = new List<CarPos>();
-	public Transform ghostTrn;
+	public Transform[] ghostTrn;
 
 	private GridXZ<GridObject> grid;
 	[SerializeField] LayerMask tileLayer;
@@ -51,7 +51,11 @@ public class GridBuildingSystem : MonoBehaviour
 		sound = FindObjectOfType<Sound>();
 		grid = new GridXZ<GridObject>(girdwidth, gridHeigth, cellSize, Vector3.zero, (GridXZ<GridObject> g, int x, int z) => new GridObject(g, x, z));
 		roadObj[roadObjIndex].GetComponent<RoadObj>().Rotate(dir);
-		ghostTrn.GetComponent<RoadObj>().Rotate(dir);
+		for (int i = 0; i < ghostTrn.Length; i++)
+		{
+			ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
+		}
+
 		
 	}
 
@@ -210,7 +214,10 @@ public class GridBuildingSystem : MonoBehaviour
 			dir++;
 			dir %= 4;
 			roadObj[roadObjIndex].GetComponent<RoadObj>().Rotate(dir);
-			ghostTrn.GetComponent<RoadObj>().Rotate(dir);
+			for (int i = 0; i < ghostTrn.Length; i++)
+			{
+				ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
+			}
 		}
 
 	}
@@ -237,8 +244,17 @@ public class GridBuildingSystem : MonoBehaviour
 	private void Ghost()
 	{
 		grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
+		for (int i = 0; i < ghostTrn.Length; i++)
+		{
+			if (i != roadObjIndex)
+			ghostTrn[i].gameObject.SetActive(false);
+			else if (i == roadObjIndex)
+				ghostTrn[i].gameObject.SetActive(true);
+		}
 		if (GetMouseWorldPosition() != Vector3.zero)
-			ghostTrn.position = grid.GetWorldPosition(x, z);
+			for (int i = 0; i < ghostTrn.Length; i++)
+				ghostTrn[i].position = grid.GetWorldPosition(x, z);
+
 
 	}
 	private void SetText()

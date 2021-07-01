@@ -8,6 +8,7 @@ public class Car : MonoBehaviour
     public NavMeshAgent nav;
     public Transform trn;
     [SerializeField]LayerMask mask;
+
     // Start is called before the first frame update
     void Start()
     {

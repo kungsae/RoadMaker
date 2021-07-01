@@ -9,20 +9,14 @@ public class Help : MonoBehaviour
     public Sprite[] leftImage;
     public Sprite[] rightImage;
     public int index = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    Sound sound;
+	private void Start()
+	{
+        sound = FindObjectOfType<Sound>();
     }
-
-    // Update is called once per frame
-    void Update()
+	public void button(int _index)
     {
-        
-    }
-    public void button(int _index)
-    {
+        sound.playSound(4);
         index += _index;
         if (index == rightImage.Length)
         {

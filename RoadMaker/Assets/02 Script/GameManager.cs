@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         fade = FindObjectOfType<Fade>();
         grid = FindObjectOfType<GridBuildingSystem>();
         stageManager = FindObjectOfType<StageManager>();
-        sound.playSound(5);
+        //sound.playSound(5);
         //Time.timeScale = 0;
         for (int i = 0; i < 3; i++)
 		{
@@ -106,8 +106,11 @@ public class GameManager : MonoBehaviour
 
                 }
             }
-            
-            grid.ghostTrn.gameObject.SetActive(false);
+
+			for (int i = 0; i < grid.ghostTrn.Length; i++)
+			{
+                grid.ghostTrn[i].gameObject.SetActive(false);
+            }
         }
     }
     public void EndGame()
@@ -118,6 +121,15 @@ public class GameManager : MonoBehaviour
 		isClear = false;
         completed = true;
         isGameOver = false;
+        for (int i = 0; i < grid.carObj.Count; i++)
+        {
+            grid.carObj[i].gameObject.SetActive(true);
+            if(grid.carObj[i].GetComponent<Car>().nav.destination != null)
+            grid.carObj[i].GetComponent<Car>().nav.ResetPath();
+            grid.carObj[i].GetComponent<Car>().nav.velocity = new Vector3(0,0,0);
+            grid.carObj[i].position = grid.carPosList[i].GetPos();
+            grid.carObj[i].eulerAngles = grid.carPosList[i].GetRot();
+        }
         sec = 0;
 		min = 0;    
 		clearUI.gameObject.SetActive(false);
@@ -129,12 +141,7 @@ public class GameManager : MonoBehaviour
 		{
 			button[i].SetActive(true);
 		}
-		for (int i = 0; i < grid.carObj.Count; i++)
-		{
-			grid.carObj[i].gameObject.SetActive(true);
-			grid.carObj[i].position = grid.carPosList[i].GetPos();
-			grid.carObj[i].eulerAngles = grid.carPosList[i].GetRot();
-		}
+		
 		for (int i = 0; i < grid.startObj.Count; i++)
 		{
 			if (grid.startObj[i].GetComponent<Car>() != null)
@@ -144,8 +151,10 @@ public class GameManager : MonoBehaviour
 			}
 		}
 		//Time.timeScale = 0;
-		grid.ghostTrn.gameObject.SetActive(true);
-	}
+            grid.ghostTrn[grid.roadObjIndex].gameObject.SetActive(true);
+       
+
+    }
     public void ResetGame()
     {
         sound.playSound(4);
@@ -155,7 +164,10 @@ public class GameManager : MonoBehaviour
     {
         grid.roadObjIndex = num;
         grid.roadObj[grid.roadObjIndex].GetComponent<RoadObj>().Rotate(grid.dir);
-        grid.ghostTrn.GetComponent<RoadObj>().Rotate(grid.dir);
+		for (int i = 0; i < grid.ghostTrn.Length; i++)
+		{
+            grid.ghostTrn[i].GetComponent<RoadObj>().Rotate(grid.dir);
+        }
     }
     public void ClearCheck()
     {
