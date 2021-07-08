@@ -24,6 +24,9 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.CollabProxy.Editor.dll:
+    - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
+    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -66,6 +69,8 @@ ScriptsOnlyBuild:
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -1170,6 +1175,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -1207,7 +1214,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3780}
     - Class: 114
-      Script: {instanceID: 16892}
+      Script: {instanceID: 15290}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1797,4 +1804,4 @@ ScriptsOnlyBuild:
   - Assets/01 Scenes/Stage8.unity
   - Assets/01 Scenes/Stage9.unity
   - Assets/01 Scenes/Stage10.unity
-  playerPath: "F:/unity/\uBE4C\uB4DC\uD30C\uC77C/roadMakerBuild6/RoadMaker.exe"
+  playerPath: "F:/unity/\uBE4C\uB4DC\uD30C\uC77C/roadMakerBuild_10/RoadMaker.exe"

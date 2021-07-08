@@ -29,10 +29,14 @@ public class SceneLoad : MonoBehaviour
 			starCount.Add(stageManager.stageStar.stageStar[i]);
 		}
 
-		if (maxOpenStage <= stageManager.stageStar.LastClearStage)
+		if (maxOpenStage <= stageManager.stageStar.LastClearStage&& stageManager.stageStar.LastClearStage < 11)
 		{
 			maxOpenStage = stageManager.stageStar.LastClearStage;
 
+		}
+		else if (stageManager.stageStar.LastClearStage > 10)
+		{
+			maxOpenStage = 10;
 		}
 		for (int i = 0; i < stageButton.Count; i++)
 		{

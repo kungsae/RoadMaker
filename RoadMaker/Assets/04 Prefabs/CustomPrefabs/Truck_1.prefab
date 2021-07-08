@@ -51,7 +51,7 @@ MonoBehaviour:
   trn: {fileID: 0}
   mask:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 5824
 --- !u!195 &2820756635735042367
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -50,11 +50,11 @@ public class Car : MonoBehaviour
     public void SetRigidbody(bool value)
 	{
         rigid.isKinematic = value;
-        rigid.useGravity = !value;
-        col.enabled = !value;
-        nav.enabled = !value;
+		rigid.useGravity = !value;
+		col.enabled = !value;
+		nav.enabled = !value;
 
-    }
+	}
 
     private void GameOver()
     {
@@ -62,16 +62,20 @@ public class Car : MonoBehaviour
         {
             GameManager.Instance.GameOver();
         }
-        nav.ResetPath();
-        nav.isStopped = true;
-        //nav.enabled = false;
+		nav.ResetPath();
+		nav.isStopped = true;
+		//nav.enabled = false;
     }
 	private void OnTriggerStay(Collider other)
 	{
         if (other.gameObject.CompareTag("Stop")&& GameManager.Instance.isStart)
         {
             if (nav.destination != null)
+            {
+                Debug.Log("∏ÿ√Á");
                 nav.isStopped = true;
+            }
+                
 
         }
         if (other.gameObject.CompareTag("Finish"))
