@@ -541,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
       propertyPath: m_LocalPosition.y
@@ -549,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
       propertyPath: m_LocalRotation.w
@@ -604,6 +604,11 @@ Transform:
 --- !u!4 &263675843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8842802922226619789, guid: 5e08eb180c370794fbd83456be264481, type: 3}
+  m_PrefabInstance: {fileID: 263675838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &263675844 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
   m_PrefabInstance: {fileID: 263675838}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &287035473
@@ -1284,6 +1289,7 @@ MonoBehaviour:
   - {fileID: 263675840}
   - {fileID: 263675839}
   - {fileID: 263675843}
+  ghost: {fileID: 263675844}
   tileLayer:
     serializedVersion: 2
     m_Bits: 128

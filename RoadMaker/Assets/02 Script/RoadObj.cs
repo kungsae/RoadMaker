@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoadObj : MonoBehaviour
 {
- [SerializeField] Transform Prefab;
+    [SerializeField] Transform Prefab;
 	public void Rotate(int dir)
 	{
 		dir *= 90;

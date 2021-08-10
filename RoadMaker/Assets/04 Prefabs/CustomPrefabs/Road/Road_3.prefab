@@ -90,9 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6694790621684401147}
-  - component: {fileID: -4547647847605146005}
   - component: {fileID: 7156197004105588651}
-  - component: {fileID: 8440175902724165982}
+  - component: {fileID: -6571093441212887510}
   m_Layer: 6
   m_Name: Road_3
   m_TagString: Untagged
@@ -115,19 +114,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-4547647847605146005
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285523367203171630}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 0, z: 2}
-  m_Center: {x: 1, y: 0.01, z: 1}
 --- !u!114 &7156197004105588651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 402457798649847848}
---- !u!64 &8440175902724165982
-MeshCollider:
+--- !u!65 &-6571093441212887510
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -151,10 +137,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0, z: 2}
+  m_Center: {x: 1, y: 0.01, z: 1}
 --- !u!1 &1619377784002043149
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402457798649847848}
   m_Layer: 6
-  m_Name: GameObject
+  m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,7 +275,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3060383327658104367}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

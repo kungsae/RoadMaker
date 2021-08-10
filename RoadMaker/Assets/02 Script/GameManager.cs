@@ -80,38 +80,45 @@ public class GameManager : MonoBehaviour
     }
 	public void StartGame()
     {
-        
-        sound.playSound(4);
-        if (maxPrice >= grid.allPrice)
+        if (!isStart)
         {
-            isStart = true;
-            Time.timeScale = 1;
-            for (int i = 0; i < button.Length-1; i++)
+            sound.playSound(4);
+            if (maxPrice >= grid.allPrice)
             {
-                button[i].SetActive(false);
-            }
-            for (int i = 0; i < nav.Length; i++)
-            {
-                nav[i].BuildNavMesh();
-            }
-
-            for (int i = 0; i < grid.startObj.Count; i++)
-            {
-                if (grid.startObj[i].GetComponent<Car>() != null)
+                isStart = true;
+                Time.timeScale = 1;
+                for (int i = 0; i < button.Length - 1; i++)
                 {
-                    Car _car = grid.startObj[i].GetComponent<Car>();
-                    _car.nav.enabled = false;
-                    _car.nav.enabled = true;
-                    _car.nav.destination = _car.trn.position;
-                    _car.SetRigidbody(false);
+                    button[i].SetActive(false);
+                }
+                for (int i = 0; i < nav.Length; i++)
+                {
+                    nav[i].BuildNavMesh();
+                }
+
+                for (int i = 0; i < grid.startObj.Count; i++)
+                {
+                    if (grid.startObj[i].GetComponent<Car>() != null)
+                    {
+                        Car _car = grid.startObj[i].GetComponent<Car>();
+                        _car.nav.enabled = false;
+                        _car.nav.enabled = true;
+                        _car.nav.destination = _car.trn.position;
+                        _car.SetRigidbody(false);
+                    }
+                }
+
+                for (int i = 0; i < grid.ghostTrn.Length; i++)
+                {
+                    grid.ghostTrn[i].gameObject.SetActive(false);
                 }
             }
-
-			for (int i = 0; i < grid.ghostTrn.Length; i++)
-			{
-                grid.ghostTrn[i].gameObject.SetActive(false);
-            }
         }
+        else if (isStart)
+        {
+            EndGame();
+        }
+      
     }
     public void EndGame()
     {
@@ -159,8 +166,7 @@ public class GameManager : MonoBehaviour
 				_car.nav.enabled = true;
 			}
 		}
-		//Time.timeScale = 0;
-            grid.ghostTrn[grid.roadObjIndex].gameObject.SetActive(true);
+        grid.ghostTrn[grid.roadObjIndex].gameObject.SetActive(true);
        
 
     }

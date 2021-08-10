@@ -781,6 +781,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8842802922226619789, guid: 5e08eb180c370794fbd83456be264481, type: 3}
   m_PrefabInstance: {fileID: 307815844}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &307815850 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
+  m_PrefabInstance: {fileID: 307815844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &318687932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1365,6 +1370,7 @@ MonoBehaviour:
   - {fileID: 307815846}
   - {fileID: 307815845}
   - {fileID: 307815849}
+  ghost: {fileID: 307815850}
   tileLayer:
     serializedVersion: 2
     m_Bits: 128

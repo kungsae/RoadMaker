@@ -518,6 +518,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8842802922226619789, guid: 5e08eb180c370794fbd83456be264481, type: 3}
   m_PrefabInstance: {fileID: 165607165}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &165607171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
+  m_PrefabInstance: {fileID: 165607165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259666199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1205,7 @@ MonoBehaviour:
   - {fileID: 165607167}
   - {fileID: 165607166}
   - {fileID: 165607170}
+  ghost: {fileID: 165607171}
   tileLayer:
     serializedVersion: 2
     m_Bits: 2176

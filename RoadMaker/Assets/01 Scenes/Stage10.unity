@@ -615,6 +615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50da862d5271acb46b4036764453589f, type: 3}
+--- !u!4 &249029999 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4915803865508461758, guid: 5e08eb180c370794fbd83456be264481, type: 3}
+  m_PrefabInstance: {fileID: 168491009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &259666199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1487,7 @@ MonoBehaviour:
   - {fileID: 168491011}
   - {fileID: 168491010}
   - {fileID: 168491014}
+  ghost: {fileID: 249029999}
   tileLayer:
     serializedVersion: 2
     m_Bits: 2176
