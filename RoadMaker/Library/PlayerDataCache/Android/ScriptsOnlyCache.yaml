@@ -1216,7 +1216,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3780}
     - Class: 114
-      Script: {instanceID: 17610}
+      Script: {instanceID: 20390}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1314,7 +1314,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: ecf59c178369d32cd10d9bfea75ddcbe
+      Hash: 53fe5d010b7269666f75d65fd68632ba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1644,7 +1644,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: c09a8bc4da2b03da6ee7b223b970b079
+      Hash: e7e0d112afee7b6f490fd16c7f6a1a3a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GridBuildingSystem
@@ -1806,4 +1806,4 @@ ScriptsOnlyBuild:
   - Assets/01 Scenes/Stage8.unity
   - Assets/01 Scenes/Stage9.unity
   - Assets/01 Scenes/Stage10.unity
-  playerPath: "F:/unity/\uBE4C\uB4DC\uD30C\uC77C/roadMakerMobile/roadMakerMobileBuilde.apk"
+  playerPath: "F:/unity/\uBE4C\uB4DC\uD30C\uC77C/roadMakerMobile/roadMakerMobileBuilde2.apk"

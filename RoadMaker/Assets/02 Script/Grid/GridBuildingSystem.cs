@@ -239,17 +239,11 @@ public class GridBuildingSystem : MonoBehaviour
 			}
 		if (Input.GetKeyDown(KeyCode.R))
 		{
-			dir++;
-			dir %= 4;
-			roadObj[roadObjIndex].GetComponent<RoadObj>().Rotate(dir);
-			for (int i = 0; i < ghostTrn.Length; i++)
-			{
-				ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
-			}
+			
 		}
 
 	}
-	private void InstantiateRoad()
+	public void InstantiateRoad()
 	{
 		grid.GetXZ(ghost.position, out int x, out int z);
 		GridObject gridObject = grid.GetGridObject(x, z);
@@ -274,7 +268,7 @@ public class GridBuildingSystem : MonoBehaviour
 			sound.playSound(0);
 		}
 	}
-	private void DelRoad()
+	public void DelRoad()
 	{
 		grid.GetXZ(ghost.position, out int x, out int z);
 		GridObject gridObject = grid.GetGridObject(x, z);
@@ -322,6 +316,16 @@ public class GridBuildingSystem : MonoBehaviour
 			}
 		}
 	}
+	public void RotateRoad()
+	{
+		dir++;
+		dir %= 4;
+		roadObj[roadObjIndex].GetComponent<RoadObj>().Rotate(dir);
+		for (int i = 0; i < ghostTrn.Length; i++)
+		{
+			ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
+		}
+	}
 	private Vector3 GetMouseWorldPosition()
 	{
 
@@ -334,7 +338,6 @@ public class GridBuildingSystem : MonoBehaviour
 	}
 	private Collider GetMouseCol()
 	{
-
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast(ray, out RaycastHit hit, 999f, tileLayer))
 		{
@@ -366,8 +369,5 @@ public class GridBuildingSystem : MonoBehaviour
 		}
 		else
 			GameManager.Instance.priceText.color = Color.white;
-	}
-	public void Init()
-	{
 	}
 }

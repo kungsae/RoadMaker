@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     Sound sound;
     Fade fade;
 
+    [SerializeField] Button[] roadSet;
 
     void Start()
     {
@@ -63,6 +64,19 @@ public class GameManager : MonoBehaviour
         stageManager = FindObjectOfType<StageManager>();
         //sound.playSound(5);
         //Time.timeScale = 0;
+        roadSet[0].onClick.AddListener(() =>
+        {
+            grid.InstantiateRoad();
+        });
+        roadSet[1].onClick.AddListener(() =>
+        {
+            grid.RotateRoad();
+        });
+        roadSet[2].onClick.AddListener(() =>
+        {
+            grid.DelRoad();
+        });
+
         for (int i = 0; i < 3; i++)
 		{
             timeLimitText[i].text = $"{timeLimit[i].ToString("00.00")}";
