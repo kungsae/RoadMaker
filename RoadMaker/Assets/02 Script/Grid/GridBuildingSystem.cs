@@ -247,26 +247,29 @@ public class GridBuildingSystem : MonoBehaviour
 	{
 		grid.GetXZ(ghost.position, out int x, out int z);
 		GridObject gridObject = grid.GetGridObject(x, z);
-		if (gridObject.CanBuild() && roadObjIndex != 4)
+		if (!GetGhostCol().CompareTag("Cant"))
 		{
-			Transform builtTransform = Instantiate(roadObj[roadObjIndex]/*ghostTrn[roadObjIndex]*/, ghost.transform.position, Quaternion.identity);
-			gridObject.SetTrn(builtTransform);
-			roads.Add(builtTransform);
-			gridObject.price = (roadObjIndex + 1) * 100;
-			allPrice += gridObject.price;
-			SetText();
-			sound.playSound(0);
-		}
-		else if (gridObject.CanOtherBuild() && roadObjIndex == 4)
-		{
-			Transform builtTransform = Instantiate(roadObj[roadObjIndex], ghost.transform.position, Quaternion.identity);
-			gridObject.SetOtherTrn(builtTransform);
-			roads.Add(builtTransform);
-			gridObject.otherPrice = 300;
-			allPrice += gridObject.otherPrice;
-			SetText();
-			sound.playSound(0);
-		}
+			if (gridObject.CanBuild() && roadObjIndex != 4)
+			{
+				Transform builtTransform = Instantiate(roadObj[roadObjIndex], ghost.transform.position, Quaternion.identity);
+				gridObject.SetTrn(builtTransform);
+				roads.Add(builtTransform);
+				gridObject.price = (roadObjIndex + 1) * 100;
+				allPrice += gridObject.price;
+				SetText();
+				sound.playSound(0);
+			}
+			else if (gridObject.CanOtherBuild() && roadObjIndex == 4)
+			{
+				Transform builtTransform = Instantiate(roadObj[roadObjIndex], ghost.transform.position, Quaternion.identity);
+				gridObject.SetOtherTrn(builtTransform);
+				roads.Add(builtTransform);
+				gridObject.otherPrice = 300;
+				allPrice += gridObject.otherPrice;
+				SetText();
+				sound.playSound(0);
+			}
+		}	
 	}
 	public void DelRoad()
 	{
@@ -345,7 +348,16 @@ public class GridBuildingSystem : MonoBehaviour
 		}
 		else return null;
 	}
-	private void Ghost()
+	private Collider GetGhostCol()
+	{
+		Ray ray = new Ray(ghost.transform.position + new Vector3(2, 1, 2), Vector3.down);
+		if (Physics.Raycast(ray, out RaycastHit hit, 999f, tileLayer))
+		{
+			return hit.collider;
+		}
+		else return null;
+	}
+	public void Ghost()
 	{
 		grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
 		for (int i = 0; i < ghostTrn.Length; i++)

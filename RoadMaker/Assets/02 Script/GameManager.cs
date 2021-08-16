@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     NavMeshSurface[] nav;
     private GridBuildingSystem grid;
     [SerializeField] private GameObject[] button;
+    [SerializeField] private GameObject nextStageButton;
     public int maxPrice;
     public Text priceText;
     [SerializeField] private Text[] timeText;
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
         roadSet[1].onClick.AddListener(() =>
         {
             grid.RotateRoad();
-        });
+        }); 
         roadSet[2].onClick.AddListener(() =>
         {
             grid.DelRoad();
@@ -101,7 +102,7 @@ public class GameManager : MonoBehaviour
             {
                 isStart = true;
                 Time.timeScale = 1;
-                for (int i = 0; i < button.Length - 1; i++)
+                for (int i = 0; i < button.Length; i++)
                 {
                     button[i].SetActive(false);
                 }
@@ -165,9 +166,9 @@ public class GameManager : MonoBehaviour
 		clearUI.gameObject.SetActive(false);
 		timeText[0].gameObject.SetActive(true);
 		timeText[1].gameObject.SetActive(true);
-		button[button.Length - 1].transform.localScale = new Vector3(1, 1);
-		timeText[0].text = $"{min.ToString("00")}:{(sec % 60).ToString("00.00")}";
-		for (int i = 0; i < button.Length - 1; i++)
+        //nextStageButton.transform.localScale = new Vector3(1, 1);
+        timeText[0].text = $"{min.ToString("00")}:{(sec % 60).ToString("00.00")}";
+		for (int i = 0; i < button.Length; i++)
 		{
 			button[i].SetActive(true);
 		}
@@ -197,6 +198,7 @@ public class GameManager : MonoBehaviour
 		{
             grid.ghostTrn[i].GetComponent<RoadObj>().Rotate(grid.dir);
         }
+        grid.Ghost();
     }
     public void ClearCheck()
     {
@@ -230,9 +232,12 @@ public class GameManager : MonoBehaviour
     }
     private void Clear()
     {
-        if (isClear&&stageManager.stageStar.LastClearStage < stageNum + 1)
+        if (stageManager != null)
         {
-            stageManager.stageStar.LastClearStage = stageNum + 1;
+            if (isClear && stageManager.stageStar.LastClearStage < stageNum + 1)
+            {
+                stageManager.stageStar.LastClearStage = stageNum + 1;
+            }
         }
         clearUI.gameObject.SetActive(true);
         clearUI.transform.localPosition = new Vector3(0, -650);
@@ -240,7 +245,7 @@ public class GameManager : MonoBehaviour
         clearChcekText.text = "Clear";
         clearChcekText.color = Color.yellow;
         timeText[1].text = $"{min.ToString("00")}:{(sec % 60).ToString("00.00")}";
-        button[button.Length - 1].SetActive(true);
+        nextStageButton.SetActive(true);
         int starCount = 0;
 		for (int i = 0; i < 3; i++)
 		{
@@ -250,8 +255,11 @@ public class GameManager : MonoBehaviour
                 star[i].sprite = starImage[1];
             }
 		}
-        if (stageManager.stageStar.stageStar[stageNum - 1] < starCount)
-            stageManager.stageStar.stageStar[stageNum - 1] = starCount;
+        if (stageManager != null)
+        {
+            if (stageManager.stageStar.stageStar[stageNum - 1] < starCount)
+                stageManager.stageStar.stageStar[stageNum - 1] = starCount;
+        }
         sound.playSound(2);
         completed = false;
     }
@@ -270,7 +278,6 @@ public class GameManager : MonoBehaviour
         clearChcekText.text = "Fail";
         clearChcekText.color = Color.red;
         timeText[1].gameObject.SetActive(false);
-        button[button.Length - 1].SetActive(false);
         sound.playSound(3);
     }
 	public void BackToStage()

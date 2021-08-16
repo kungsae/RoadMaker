@@ -2511,8 +2511,12 @@ MonoBehaviour:
   - {fileID: 1033365780}
   - {fileID: 1108229513}
   - {fileID: 1263173746}
-  - {fileID: 347598668}
   - {fileID: 1591602134}
+  - {fileID: 1415045033}
+  - {fileID: 1405853946}
+  - {fileID: 1176442255}
+  - {fileID: 347598668}
+  nextStageButton: {fileID: 1591602134}
   maxPrice: 400
   priceText: {fileID: 29551888}
   timeText:
@@ -5155,7 +5159,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1729035611897152059, guid: 5e08eb180c370794fbd83456be264481, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2942682892723534162, guid: 5e08eb180c370794fbd83456be264481, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613183882272774342, guid: 5e08eb180c370794fbd83456be264481, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -5214,6 +5226,10 @@ PrefabInstance:
     - target: {fileID: 4915803865508461759, guid: 5e08eb180c370794fbd83456be264481, type: 3}
       propertyPath: Prefab
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192283613386581275, guid: 5e08eb180c370794fbd83456be264481, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e08eb180c370794fbd83456be264481, type: 3}
