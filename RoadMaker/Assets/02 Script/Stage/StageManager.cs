@@ -15,17 +15,22 @@ public class StageDataList
 
 public class StageManager : MonoBehaviour
 {
-
+	public static StageManager stageM;
 	public StageDataList stageStar = new StageDataList();
 
 	private void Awake()
 	{
-		
+		if (stageM != null)
+		{
+			Destroy(gameObject);
+			return;
+		}
+		stageM = this;
+		DontDestroyOnLoad(gameObject);
 		for (int i = 0; i < 10; i++)
 		{
 			stageStar.stageStar.Add(0);
 		}
-		DontDestroyOnLoad(gameObject);
 		Load();
 	}
 	private void OnApplicationQuit()

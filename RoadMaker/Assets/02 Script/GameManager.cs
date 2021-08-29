@@ -33,8 +33,7 @@ public class GameManager : MonoBehaviour
     private bool isClear = false;
     private bool completed = true;
     [SerializeField] private GameObject clearUI;
-    [SerializeField]
-    NavMeshSurface[] nav;
+    [SerializeField] NavMeshSurface[] nav;
     private GridBuildingSystem grid;
     [SerializeField] private GameObject[] button;
     [SerializeField] private GameObject nextStageButton;
@@ -44,7 +43,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text clearChcekText;
     private float sec = 0;
     private float min = 0;
-    private float tiem = 0;
     [SerializeField] private int stageNum = 1;
     StageManager stageManager;
     public bool isGameOver = false;
@@ -68,14 +66,32 @@ public class GameManager : MonoBehaviour
         roadSet[0].onClick.AddListener(() =>
         {
             grid.InstantiateRoad();
+			for (int i = 0; i < roadSet.Length; i++)
+			{
+                roadSet[i].interactable = true;
+
+            }
+            roadSet[0].interactable = false;
         });
         roadSet[1].onClick.AddListener(() =>
         {
             grid.RotateRoad();
+            for (int i = 0; i < roadSet.Length; i++)
+            {
+                roadSet[i].interactable = true;
+
+            }
+            roadSet[1].interactable = false;
         }); 
         roadSet[2].onClick.AddListener(() =>
         {
             grid.DelRoad();
+            for (int i = 0; i < roadSet.Length; i++)
+            {
+                roadSet[i].interactable = true;
+
+            }
+            roadSet[2].interactable = false;
         });
 
         for (int i = 0; i < 3; i++)
