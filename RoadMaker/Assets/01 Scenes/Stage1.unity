@@ -1163,6 +1163,7 @@ MonoBehaviour:
   ground: {fileID: 495631350}
   groundSize: {x: 20, y: 0, z: 20}
   cameraSize: 0
+  bulidMode: 0
 --- !u!4 &495631352
 Transform:
   m_ObjectHideFlags: 0
@@ -2503,10 +2504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89e2bb68ffc58649854231afe837c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStart: 0
   clearUI: {fileID: 1999423685}
-  nav:
-  - {fileID: 495631353}
   button:
   - {fileID: 1042412890}
   - {fileID: 1642903778}
@@ -2521,22 +2519,23 @@ MonoBehaviour:
   - {fileID: 1176442255}
   - {fileID: 347598668}
   nextStageButton: {fileID: 1591602134}
-  maxPrice: 400
-  priceText: {fileID: 29551888}
   timeText:
   - {fileID: 1222325757}
   - {fileID: 1688310226}
-  clearChcekText: {fileID: 391239565}
-  stageNum: 1
-  isGameOver: 0
   timeLimit:
   - 5
   - 4
   - 3
+  nav:
+  - {fileID: 495631353}
   star:
   - {fileID: 413564551}
   - {fileID: 636641212}
   - {fileID: 526327462}
+  roadSet:
+  - {fileID: 1176442257}
+  - {fileID: 1405853948}
+  - {fileID: 1415045035}
   starImage:
   - {fileID: 21300000, guid: 0d8ed6fa02deca04585bb5d128e5a864, type: 3}
   - {fileID: 21300000, guid: 5db7adf47baeadb449c412f7f44a9bef, type: 3}
@@ -2544,10 +2543,12 @@ MonoBehaviour:
   - {fileID: 1714242152}
   - {fileID: 867998575}
   - {fileID: 1947645650}
-  roadSet:
-  - {fileID: 1176442257}
-  - {fileID: 1405853948}
-  - {fileID: 1415045035}
+  stageNum: 1
+  clearChcekText: {fileID: 391239565}
+  priceText: {fileID: 29551888}
+  maxPrice: 400
+  isStart: 0
+  isGameOver: 0
 --- !u!4 &1099228091
 Transform:
   m_ObjectHideFlags: 0
@@ -5155,7 +5156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &4915803865397258277
 PrefabInstance:
   m_ObjectHideFlags: 0

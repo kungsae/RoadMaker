@@ -10,4 +10,8 @@ public class RoadObj : MonoBehaviour
 		dir *= 90;
 		Prefab.transform.rotation = Quaternion.Euler(0,dir, 0);
 	}
+	public int GetRotate()
+	{
+		return (int)Prefab.transform.rotation.eulerAngles.y;
+	}
 }

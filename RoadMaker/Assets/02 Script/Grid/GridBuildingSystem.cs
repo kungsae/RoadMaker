@@ -7,36 +7,39 @@ using UnityEngine.EventSystems;
 
 public class GridBuildingSystem : MonoBehaviour
 {
-	public Transform[] roadObj;
 	[SerializeField] private Transform defaultRoad;
-	[HideInInspector] public List<Vector3> originPos = new List<Vector3>();
-	[HideInInspector] public List<Transform> roads;
+	[SerializeField] LayerMask tileLayer;
+	[SerializeField] LayerMask roadLayer;
+	[SerializeField] int gridX;
+	[SerializeField] int gridZ;
+	public Transform[] roadObj;
 	public List<Transform> startObj;
 	public List<Transform> carObj;
 	public List<CarPos> carPosList = new List<CarPos>();
 	public Transform[] ghostTrn;
 	public Transform ghost;
-
-	private GridXZ<GridObject> grid;
-	[SerializeField] LayerMask tileLayer;
-	[SerializeField] LayerMask roadLayer;
-	[HideInInspector] public int roadObjIndex = 0;
-	[HideInInspector] public int allPrice;
-
-	private Sound sound;
-	[HideInInspector] int roadsIndex;
-	[HideInInspector] public int dir = 0;
-
-	[SerializeField] int gridX;
-	[SerializeField] int gridZ;
-
-
 	public Camera mainCamera;
 	public GameObject ground;
-
-	public Vector3 groundSize;
-	private Vector3 cameraPos;
 	public float cameraSize;
+	public Vector3 groundSize;
+	public enum BulidMode
+	{
+		None,
+		Build,
+		Rotate,
+		Delete
+	}
+	public BulidMode bulidMode = BulidMode.None;
+
+	private Vector3 cameraPos;
+	private Sound sound;
+	private GridXZ<GridObject> grid;
+	[HideInInspector] public List<Vector3> originPos = new List<Vector3>();
+	[HideInInspector] public List<Transform> roads;
+	[HideInInspector] public int roadObjIndex = 0;
+	[HideInInspector] public int allPrice;
+	[HideInInspector] int roadsIndex;
+	[HideInInspector] public int dir = 0;
 
 	public class CarPos
 	{
@@ -53,6 +56,7 @@ public class GridBuildingSystem : MonoBehaviour
 		public Vector3 GetRot()
 		{ return rot; }
 	}
+	
 	private void Awake()
 	{
 		int girdwidth = gridX;
@@ -61,17 +65,18 @@ public class GridBuildingSystem : MonoBehaviour
 		sound = FindObjectOfType<Sound>();
 		grid = new GridXZ<GridObject>(girdwidth, gridHeigth, cellSize, Vector3.zero, (GridXZ<GridObject> g, int x, int z) => new GridObject(g, x, z));
 		roadObj[roadObjIndex].GetComponent<RoadObj>().Rotate(dir);
+		ground = gameObject;
 		for (int i = 0; i < ghostTrn.Length; i++)
 		{
 			ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
 		}
-		ground.transform.localScale += groundSize;
-		cameraPos.x += groundSize.x*0.5f;
-		cameraPos.z += groundSize.z*0.5f;
-		cameraSize += cameraPos.x * 0.5f;
+		//ground.transform.localScale += groundSize;
+		//cameraPos.x += groundSize.x*0.5f;
+		//cameraPos.z += groundSize.z*0.5f;
+		//cameraSize += cameraPos.x * 0.5f;
 
-		mainCamera.transform.position += cameraPos;
-		mainCamera.orthographicSize += cameraPos.x/1.5f;
+		//mainCamera.transform.position += cameraPos;
+		//mainCamera.orthographicSize += cameraPos.x/1.5f;
 	}
 
 	private void Start()
@@ -151,17 +156,13 @@ public class GridBuildingSystem : MonoBehaviour
 		{
 			return;
 		}
-		//Ghost();
-		if (Input.GetKeyDown(KeyCode.A))
+		if (Input.GetKeyDown(KeyCode.R))
 		{
-			InstantiateRoad();
+			RotateRoad();
 		}
-
-		if (Input.GetKeyDown(KeyCode.S))
-		{
-			DelRoad();
-		}
-		if (Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButton(0))
+			Ghost();
+		if (Input.GetMouseButtonUp(0))
 		{
 			if (!EventSystem.current.IsPointerOverGameObject())
 			{
@@ -170,94 +171,47 @@ public class GridBuildingSystem : MonoBehaviour
 				GridObject gridObject = grid.GetGridObject(x, z);
 				if (GetMouseWorldPosition() != Vector3.zero && !GetMouseCol().CompareTag("Cant"))
 				{
+#if UNITY_ANDROID
+
+					TouchEvent(gridObject);
+#else
 					if (gridObject.CanBuild() || (gridObject.CanOtherBuild() && roadObjIndex == 4))
+					{
 						InstantiateRoad();
-					//	//if (gridObject.CanBuild() && roadObjIndex != 4)
-					//	//{
-					//	//	Transform builtTransform = Instantiate(roadObj[roadObjIndex]/*ghostTrn[roadObjIndex]*/, grid.GetWorldPosition(x, z), Quaternion.identity);
-					//	//	gridObject.SetTrn(builtTransform);
-					//	//	roads.Add(builtTransform);
-					//	//	gridObject.price = (roadObjIndex + 1) * 100;
-					//	//	allPrice += gridObject.price;
-					//	//	SetText();
-					//	//	sound.playSound(0);
-					//	//}
-
-
+					}
 					else if ((!gridObject.CanBuild() && roadObjIndex != 4) || !gridObject.CanOtherBuild())
 					{
 						DelRoad();
 					}
+#endif
 				}
-
-
-					//else if (gridObject.CanOtherBuild() && roadObjIndex == 4)
-					//{
-					//	Transform builtTransform = Instantiate(roadObj[roadObjIndex], grid.GetWorldPosition(x, z), Quaternion.identity);
-					//	gridObject.SetOtherTrn(builtTransform);
-					//	roads.Add(builtTransform);
-					//	gridObject.otherPrice = 300;
-					//	allPrice += gridObject.otherPrice;
-					//	SetText();
-					//	sound.playSound(0);
-					//}
-
-					//}
-				}
-		}
-		if (Input.GetMouseButtonDown(1))
-			{
-			//	if (!EventSystem.current.IsPointerOverGameObject())
-			//	{
-			//		grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
-			//		GridObject gridObject = grid.GetGridObject(x, z);
-			//		if (!gridObject.CanBuild())
-			//		{
-			//			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			//			if (Physics.Raycast(ray, out RaycastHit hit, 999f, roadLayer))
-			//			{
-			//				Collider builtObj = hit.collider;
-
-			//				if (gridObject.CanOtherBuild())
-			//				{
-			//					allPrice -= gridObject.price;
-			//				}
-			//				else
-			//				{
-			//					allPrice -= gridObject.otherPrice;
-			//				}
-			//				if (builtObj.CompareTag("Stop"))
-			//				{
-			//					gridObject.ClrearOtherTrn();
-			//				}
-			//				else
-			//				{
-			//					gridObject.ClrearTrn();
-			//				}
-			//				Destroy(builtObj.gameObject);
-			//				sound.playSound(1);
-			//				roadsIndex = roads.Count;
-			//				SetText();
-			//				for (int i = 0; i < roadsIndex; i++)
-			//				{
-			//					if (roads[i] == null)
-			//					{
-			//						roads.RemoveAt(i);
-			//						break;
-			//					}
-
-			//				}
-			//			}
-
-			//		}
-			//	}
 			}
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			RotateRoad();
 		}
 
 	}
+	public void TouchEvent(GridObject gridObject)
+	{
+        switch (bulidMode)
+        {
+            case BulidMode.None:
+                break;
+            case BulidMode.Build:
+				if (gridObject.CanBuild() || (gridObject.CanOtherBuild() && roadObjIndex == 4))
+				{
+					InstantiateRoad();
+				}
+                break;
+            case BulidMode.Rotate:
+				RotateRoad();
+                break;
+            case BulidMode.Delete:
+				if ((!gridObject.CanBuild() && roadObjIndex != 4) || !gridObject.CanOtherBuild())
+				{
+					DelRoad();
+				}
+				break;
+        }
+    }
 	public void InstantiateRoad()
 	{
 		grid.GetXZ(ghost.position, out int x, out int z);
@@ -336,6 +290,18 @@ public class GridBuildingSystem : MonoBehaviour
 	}
 	public void RotateRoad()
 	{
+#if UNITY_ANDROID
+		if (GetGhostRoadCol() == null) return;
+		RoadObj road = GetGhostRoadCol().GetComponent<RoadObj>();
+		dir = (int)(road.GetRotate()/ 90);
+		dir++;
+		dir %= 4;
+		road.Rotate(dir);
+		for (int i = 0; i < ghostTrn.Length; i++)
+		{
+			ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
+		}
+#else
 		dir++;
 		dir %= 4;
 		roadObj[roadObjIndex].GetComponent<RoadObj>().Rotate(dir);
@@ -343,10 +309,10 @@ public class GridBuildingSystem : MonoBehaviour
 		{
 			ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
 		}
+#endif
 	}
 	private Vector3 GetMouseWorldPosition()
 	{
-
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if (Physics.Raycast(ray, out RaycastHit hit, 999f, tileLayer))
 		{
@@ -367,6 +333,15 @@ public class GridBuildingSystem : MonoBehaviour
 	{
 		Ray ray = new Ray(ghost.transform.position + new Vector3(2, 1, 2), Vector3.down);
 		if (Physics.Raycast(ray, out RaycastHit hit, 999f, tileLayer))
+		{
+			return hit.collider;
+		}
+		else return null;
+	}
+	private Collider GetGhostRoadCol()
+	{
+		Ray ray = new Ray(ghost.transform.position + new Vector3(2, 1, 2), Vector3.down);
+		if (Physics.Raycast(ray, out RaycastHit hit, 999f, roadLayer))
 		{
 			return hit.collider;
 		}
@@ -395,6 +370,8 @@ public class GridBuildingSystem : MonoBehaviour
 			GameManager.Instance.priceText.color = Color.red;
 		}
 		else
+		{
 			GameManager.Instance.priceText.color = Color.white;
+		}
 	}
 }

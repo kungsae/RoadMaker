@@ -29,31 +29,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool isStart = false;
-    private bool isClear = false;
-    private bool completed = true;
     [SerializeField] private GameObject clearUI;
-    [SerializeField] NavMeshSurface[] nav;
-    private GridBuildingSystem grid;
     [SerializeField] private GameObject[] button;
     [SerializeField] private GameObject nextStageButton;
-    public int maxPrice;
-    public Text priceText;
     [SerializeField] private Text[] timeText;
-    [SerializeField] private Text clearChcekText;
-    private float sec = 0;
-    private float min = 0;
-    [SerializeField] private int stageNum = 1;
-    StageManager stageManager;
-    public bool isGameOver = false;
     [SerializeField] private float[] timeLimit;
+    [SerializeField] NavMeshSurface[] nav;
     [SerializeField] Image[] star;
+    [SerializeField] Button[] roadSet;
     [SerializeField] Sprite[] starImage;
     [SerializeField] Text[] timeLimitText;
+    [SerializeField] private int stageNum = 1;
+    [SerializeField] private Text clearChcekText;
+    public Text priceText;
+    public int maxPrice;
+    public bool isStart = false;
+    public bool isGameOver = false;
+    private GridBuildingSystem grid;
+    private bool isClear = false;
+    private bool completed = true;
+    private float sec = 0;
+    private float min = 0;
+    StageManager stageManager;
     Sound sound;
     Fade fade;
 
-    [SerializeField] Button[] roadSet;
 
     void Start()
     {
@@ -61,39 +61,30 @@ public class GameManager : MonoBehaviour
         fade = FindObjectOfType<Fade>();
         grid = FindObjectOfType<GridBuildingSystem>();
         stageManager = FindObjectOfType<StageManager>();
-        //sound.playSound(5);
-        //Time.timeScale = 0;
+#if UNITY_ANDROID
         roadSet[0].onClick.AddListener(() =>
         {
-            grid.InstantiateRoad();
-			for (int i = 0; i < roadSet.Length; i++)
-			{
-                roadSet[i].interactable = true;
-
-            }
-            roadSet[0].interactable = false;
+            grid.bulidMode = GridBuildingSystem.BulidMode.Build;
+            ButtonInteract(0);
         });
         roadSet[1].onClick.AddListener(() =>
         {
-            grid.RotateRoad();
-            for (int i = 0; i < roadSet.Length; i++)
-            {
-                roadSet[i].interactable = true;
+            grid.bulidMode = GridBuildingSystem.BulidMode.Rotate;
 
-            }
-            roadSet[1].interactable = false;
-        }); 
+            ButtonInteract(1);
+
+        });
         roadSet[2].onClick.AddListener(() =>
         {
-            grid.DelRoad();
-            for (int i = 0; i < roadSet.Length; i++)
-            {
-                roadSet[i].interactable = true;
-
-            }
-            roadSet[2].interactable = false;
+            grid.bulidMode = GridBuildingSystem.BulidMode.Delete;
+            ButtonInteract(2);
         });
-
+#else
+        for (int i = 0; i < 3; i++)
+        {
+            roadSet[i].gameObject.SetActive(false);
+        }
+#endif
         for (int i = 0; i < 3; i++)
 		{
             timeLimitText[i].text = $"{timeLimit[i].ToString("00.00")}";
@@ -313,5 +304,13 @@ public class GameManager : MonoBehaviour
         }
         sound.playSound(4);
         StartCoroutine(fade.FadeOut("Stage",(stageNum+1)));
+    }
+    public void ButtonInteract(int idx)
+    {
+        for (int i = 0; i < roadSet.Length; i++)
+        {
+            roadSet[i].interactable = true;
+        }
+        roadSet[idx].interactable = false;
     }
 }
