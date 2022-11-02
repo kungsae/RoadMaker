@@ -160,6 +160,8 @@ public class GridBuildingSystem : MonoBehaviour
 		{
 			RotateRoad();
 		}
+#if UNITY_ANDROID
+
 		if(Input.GetMouseButton(0))
 			Ghost();
 		if (Input.GetMouseButtonUp(0))
@@ -171,10 +173,21 @@ public class GridBuildingSystem : MonoBehaviour
 				GridObject gridObject = grid.GetGridObject(x, z);
 				if (GetMouseWorldPosition() != Vector3.zero && !GetMouseCol().CompareTag("Cant"))
 				{
-#if UNITY_ANDROID
-
 					TouchEvent(gridObject);
+				}
+			}
+		}
 #else
+		Ghost();
+		if (Input.GetMouseButtonDown(0))
+		{
+			if (!EventSystem.current.IsPointerOverGameObject())
+			{
+				Ghost();
+				grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
+				GridObject gridObject = grid.GetGridObject(x, z);
+				if (GetMouseWorldPosition() != Vector3.zero && !GetMouseCol().CompareTag("Cant"))
+				{
 					if (gridObject.CanBuild() || (gridObject.CanOtherBuild() && roadObjIndex == 4))
 					{
 						InstantiateRoad();
@@ -183,10 +196,11 @@ public class GridBuildingSystem : MonoBehaviour
 					{
 						DelRoad();
 					}
-#endif
 				}
 			}
 		}
+
+#endif
 
 	}
 	public void TouchEvent(GridObject gridObject)
