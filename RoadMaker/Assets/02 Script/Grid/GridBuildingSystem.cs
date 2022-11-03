@@ -125,12 +125,10 @@ public class GridBuildingSystem : MonoBehaviour
 		public void SetTrn(Transform transform)
 		{
 			trn = transform;
-			grid.TriggerGridObjectChanged(x, z);
 		}
 		public void SetOtherTrn(Transform transform)
 		{
 			otherTrn = transform;
-			grid.TriggerGridObjectChanged(x, z);
 		}
 		public bool CanBuild()
 		{
@@ -143,12 +141,10 @@ public class GridBuildingSystem : MonoBehaviour
 		public void ClrearTrn()
 		{
 			trn = null;
-			grid.TriggerGridObjectChanged(x, z);
 		}
 		public void ClrearOtherTrn()
 		{
 			otherTrn = null;
-			grid.TriggerGridObjectChanged(x, z);
 		}
 	}
 	private void Update()

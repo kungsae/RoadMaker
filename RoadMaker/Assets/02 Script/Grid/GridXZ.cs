@@ -2,18 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using CodeMonkey.Utils;
 
 public class GridXZ<TGridObject>
 {
-
-    public event EventHandler<OnGridObjectChangedEventArgs> OnGridObjectChanged;
-    public class OnGridObjectChangedEventArgs : EventArgs
-    {
-        public int x;
-        public int z;
-    }
-
     private int width;
     private int height;
     private float cellSize;
@@ -52,13 +43,8 @@ public class GridXZ<TGridObject>
             }
             Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
             Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
-
-            //OnGridObjectChanged += (object sender, OnGridObjectChangedEventArgs eventArgs) => {
-            //    debugTextArray[eventArgs.x, eventArgs.z].text = gridArray[eventArgs.x, eventArgs.z]?.ToString();
-            //};
         }
     }
-
     public int GetWidth()
     {
         return width;
@@ -90,13 +76,7 @@ public class GridXZ<TGridObject>
         if (x >= 0 && z >= 0 && x < width && z < height)
         {
             gridArray[x, z] = value;
-            TriggerGridObjectChanged(x, z);
         }
-    }
-
-    public void TriggerGridObjectChanged(int x, int z)
-    {
-        OnGridObjectChanged?.Invoke(this, new OnGridObjectChangedEventArgs { x = x, z = z });
     }
 
     public void SetGridObject(Vector3 worldPosition, TGridObject value)
