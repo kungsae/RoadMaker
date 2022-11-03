@@ -43,7 +43,7 @@ public class GridBuildingSystem : MonoBehaviour
 
 	public class CarPos
 	{
-	Vector3 pos;
+		Vector3 pos;
 		Vector3 rot;
 
 		public CarPos(Vector3 _pos, Vector3 _rot)
@@ -52,9 +52,13 @@ public class GridBuildingSystem : MonoBehaviour
 			rot = _rot;
 		}
 		public Vector3 GetPos()
-		{ return pos; }
+		{ 
+			return pos; 
+		}
 		public Vector3 GetRot()
-		{ return rot; }
+		{ 
+			return rot; 
+		}
 	}
 	
 	private void Awake()
@@ -70,13 +74,6 @@ public class GridBuildingSystem : MonoBehaviour
 		{
 			ghostTrn[i].GetComponent<RoadObj>().Rotate(dir);
 		}
-		//ground.transform.localScale += groundSize;
-		//cameraPos.x += groundSize.x*0.5f;
-		//cameraPos.z += groundSize.z*0.5f;
-		//cameraSize += cameraPos.x * 0.5f;
-
-		//mainCamera.transform.position += cameraPos;
-		//mainCamera.orthographicSize += cameraPos.x/1.5f;
 	}
 
 	private void Start()
@@ -99,9 +96,13 @@ public class GridBuildingSystem : MonoBehaviour
 		for (int i = 0; i < ghostTrn.Length; i++)
 		{
 			if (i != roadObjIndex)
+			{
 				ghostTrn[i].gameObject.SetActive(false);
+			}
 			else if (i == roadObjIndex)
+			{
 				ghostTrn[i].gameObject.SetActive(true);
+			}
 		}
 		ghost.transform.position = grid.GetWorldPosition(2, 2);
 	}
@@ -164,39 +165,25 @@ public class GridBuildingSystem : MonoBehaviour
 
 		if(Input.GetMouseButton(0))
 			Ghost();
-		if (Input.GetMouseButtonUp(0))
+		if (Input.GetMouseButtonUp(0)&&!EventSystem.current.IsPointerOverGameObject()&& GetMouseWorldPosition() != Vector3.zero)
 		{
-			if (!EventSystem.current.IsPointerOverGameObject())
-			{
-				Ghost();
-				grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
-				GridObject gridObject = grid.GetGridObject(x, z);
-				if (GetMouseWorldPosition() != Vector3.zero && !GetMouseCol().CompareTag("Cant"))
-				{
-					TouchEvent(gridObject);
-				}
-			}
+			grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
+			GridObject gridObject = grid.GetGridObject(x, z);
+			TouchEvent(gridObject);
 		}
 #else
 		Ghost();
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()&& GetMouseWorldPosition() != Vector3.zero)
 		{
-			if (!EventSystem.current.IsPointerOverGameObject())
+			grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
+			GridObject gridObject = grid.GetGridObject(x, z);
+			if (gridObject.CanBuild() || (gridObject.CanOtherBuild() && roadObjIndex == 4))
 			{
-				Ghost();
-				grid.GetXZ(GetMouseWorldPosition(), out int x, out int z);
-				GridObject gridObject = grid.GetGridObject(x, z);
-				if (GetMouseWorldPosition() != Vector3.zero && !GetMouseCol().CompareTag("Cant"))
-				{
-					if (gridObject.CanBuild() || (gridObject.CanOtherBuild() && roadObjIndex == 4))
-					{
-						InstantiateRoad();
-					}
-					else if ((!gridObject.CanBuild() && roadObjIndex != 4) || !gridObject.CanOtherBuild())
-					{
-						DelRoad();
-					}
-				}
+				InstantiateRoad();
+			}
+			else if ((!gridObject.CanBuild() && roadObjIndex != 4) || !gridObject.CanOtherBuild())
+			{
+				DelRoad();
 			}
 		}
 
@@ -258,48 +245,30 @@ public class GridBuildingSystem : MonoBehaviour
 	{
 		grid.GetXZ(ghost.position, out int x, out int z);
 		GridObject gridObject = grid.GetGridObject(x, z);
-		if (!gridObject.CanBuild() || !gridObject.CanOtherBuild())
+		Ray ray = new Ray(ghost.transform.position + new Vector3(2, 1, 2), Vector3.down);
+		if (Physics.Raycast(ray, out RaycastHit hit, 999f, roadLayer))
 		{
-			Ray ray = new Ray(ghost.transform.position + new Vector3(2, 1, 2), Vector3.down);
-			Debug.DrawRay(ghost.transform.position + new Vector3(2, 1, 2), ray.direction, Color.red, 3f);
-			if (Physics.Raycast(ray, out RaycastHit hit, 999f, roadLayer))
+			Collider builtObj = hit.collider;
+
+			if (hit.collider.transform.position == grid.GetWorldPosition(x, z))
 			{
-				Collider builtObj = hit.collider;
-
-				if (hit.collider.transform.position == grid.GetWorldPosition(x, z))
+				if  (gridObject.CanOtherBuild())
 				{
-					if (gridObject.CanOtherBuild())
-					{
-						allPrice -= gridObject.price;
-					}
-					else
-					{
-						allPrice -= gridObject.otherPrice;
-					}
-					if (builtObj.CompareTag("Stop"))
-					{
-						gridObject.ClrearOtherTrn();
-					}
-					else
-					{
-						gridObject.ClrearTrn();
-					}
-					Destroy(builtObj.gameObject);
-					sound.playSound(1);
-					roadsIndex = roads.Count;
-					SetText();
-					for (int i = 0; i < roadsIndex; i++)
-					{
-						if (roads[i] == null)
-						{
-							roads.RemoveAt(i);
-							break;
-						}
-
-					}
+					allPrice -= gridObject.price;
+					gridObject.ClrearTrn();
 				}
-
+				else
+				{
+					allPrice -= gridObject.otherPrice;
+					gridObject.ClrearOtherTrn();
+				}
+				roads.Remove(builtObj.gameObject.transform);
+				Destroy(builtObj.gameObject);
+				sound.playSound(1);
+				roadsIndex = roads.Count;
+				SetText();
 			}
+
 		}
 	}
 	public void RotateRoad()

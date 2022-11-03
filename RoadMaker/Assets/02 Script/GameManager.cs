@@ -102,43 +102,41 @@ public class GameManager : MonoBehaviour
     }
 	public void StartGame()
     {
-        if (!isStart)
-        {
-            sound.playSound(4);
-            if (maxPrice >= grid.allPrice)
-            {
-                isStart = true;
-                Time.timeScale = 1;
-                for (int i = 0; i < button.Length; i++)
-                {
-                    button[i].SetActive(false);
-                }
-                for (int i = 0; i < nav.Length; i++)
-                {
-                    nav[i].BuildNavMesh();
-                }
-
-                for (int i = 0; i < grid.startObj.Count; i++)
-                {
-                    if (grid.startObj[i].GetComponent<Car>() != null)
-                    {
-                        Car _car = grid.startObj[i].GetComponent<Car>();
-                        _car.nav.enabled = false;
-                        _car.nav.enabled = true;
-                        _car.nav.destination = _car.trn.position;
-                        _car.SetRigidbody(false);
-                    }
-                }
-
-                for (int i = 0; i < grid.ghostTrn.Length; i++)
-                {
-                    grid.ghostTrn[i].gameObject.SetActive(false);
-                }
-            }
-        }
-        else if (isStart)
+        if (isStart)
         {
             EndGame();
+            return;
+        }
+        sound.playSound(4);
+        if (maxPrice >= grid.allPrice)
+        {
+            isStart = true;
+            Time.timeScale = 1;
+            for (int i = 0; i < button.Length; i++)
+            {
+                button[i].SetActive(false);
+            }
+            for (int i = 0; i < nav.Length; i++)
+            {
+                nav[i].BuildNavMesh();
+            }
+
+            for (int i = 0; i < grid.startObj.Count; i++)
+            {
+                Car _car = grid.startObj[i].GetComponent<Car>();
+                if (_car != null)
+                {
+                    _car.nav.enabled = false;
+                    _car.nav.enabled = true;
+                    _car.nav.destination = _car.trn.position;
+                    _car.SetRigidbody(false);
+                }
+            }
+
+            for (int i = 0; i < grid.ghostTrn.Length; i++)
+            {
+                grid.ghostTrn[i].gameObject.SetActive(false);
+            }
         }
       
     }
@@ -175,12 +173,18 @@ public class GameManager : MonoBehaviour
 		timeText[1].gameObject.SetActive(true);
         //nextStageButton.transform.localScale = new Vector3(1, 1);
         timeText[0].text = $"{min.ToString("00")}:{(sec % 60).ToString("00.00")}";
-		for (int i = 0; i < button.Length; i++)
+#if UNITY_ANDROID
+        for (int i = 0; i < button.Length; i++)
 		{
 			button[i].SetActive(true);
 		}
-		
-		for (int i = 0; i < grid.startObj.Count; i++)
+#else
+        for (int i = 0; i < button.Length - 3; i++)
+        {
+            button[i].SetActive(true);
+        }
+#endif
+        for (int i = 0; i < grid.startObj.Count; i++)
 		{
 			if (grid.startObj[i].GetComponent<Car>() != null)
 			{
